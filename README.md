@@ -15,3 +15,7 @@ Unveränderter Stand der Live-Seite vom 20.10.2026, als PDF aus Safari exportier
 | Datenschutz | pdf/datenschutz.pdf | text/datenschutz.txt |
 
 Noch keine Änderungen. Die Prüfung (Recht und SEO) liegt als separates Dokument vor.
+
+### bilder-aus-pdf/
+
+Bilder, die aus den PDFs extrahiert wurden (Übergangslösung, bis die Originaldateien von der Live-Seite vorliegen): Logo (160 px, transparent), Mockup Praxis-Guide (1920 px), Mockup Lieferantenkontakt (864 px), Foto Kadir (364 px). Die Auflösung entspricht dem, was Safari ins PDF geschrieben hat, nicht zwingend dem Original.
