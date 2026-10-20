@@ -172,7 +172,8 @@ body{background:var(--background);color:var(--foreground)}
 .ks-step{position:relative;padding:2rem 1.5rem;border-radius:1.25rem;background:var(--card);border:1px solid var(--border);overflow:hidden;transition:transform .3s,border-color .3s}
 .ks-step:hover{transform:translateY(-4px);border-color:color-mix(in oklab,var(--accent) 50%,transparent)}
 .ks-step::after{content:"";position:absolute;inset:auto -30% -60% auto;width:14rem;height:14rem;border-radius:50%;background:radial-gradient(circle,rgba(46,230,168,.12),transparent 70%)}
-.ks-step-n{display:block;font-family:Archivo Variable,Archivo,Arial Narrow,sans-serif;font-stretch:75%;font-weight:900;font-size:3.5rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ks-step-i{display:grid;place-items:center;width:3.25rem;height:3.25rem;border-radius:.9rem;background:var(--grad);color:var(--accent-foreground);box-shadow:0 8px 24px -8px color-mix(in oklab,var(--accent) 60%,transparent)}
+.ks-step-i svg{width:1.6rem;height:1.6rem}
 .ks-step h3{margin-top:1rem;font-size:1.75rem;line-height:1;color:var(--foreground)}
 .ks-step p{margin-top:.75rem;color:var(--muted-foreground);line-height:1.65}
 
@@ -201,7 +202,7 @@ body{background:var(--background);color:var(--foreground)}
 @media (min-width:1024px){.ks-chaps{grid-template-columns:repeat(3,1fr)}}
 .ks-chap{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem;border-radius:1rem;background:var(--card);border:1px solid var(--border);transition:transform .25s,border-color .25s}
 .ks-chap:hover{transform:translateY(-3px);border-color:color-mix(in oklab,var(--accent) 50%,transparent)}
-.ks-chap>span{font-size:1.5rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;min-width:2.25rem}
+.ks-chap-dot{flex:none;width:.6rem;height:.6rem;margin-top:.45rem;border-radius:50%;background:var(--grad);box-shadow:0 0 0 4px color-mix(in oklab,var(--accent) 18%,transparent)}
 .ks-chap p{line-height:1.45;color:var(--foreground)}
 .ks-chap-more{padding:0;border-style:dashed;background:transparent}
 .ks-chap-more a{display:flex;flex-direction:column;gap:.35rem;width:100%;padding:1.25rem;font-weight:600;color:var(--foreground);border-radius:1rem}
