@@ -58,6 +58,7 @@ def build_assets():
     w, h = kadir.size  # Hochformat -> quadratischer Ausschnitt wie auf der Live-Seite (object-cover, Mitte)
     top = (h - w) // 2
     kadir.crop((0, top, w, top + w)).resize((480, 480), Image.LANCZOS).save(os.path.join(a, "kadir.webp"), quality=82)
+    kadir.resize((900, 1200), Image.LANCZOS).save(os.path.join(a, "kadir-portrait.webp"), quality=80)
 
     # Vorschaubild für Social Media, 1200 x 630
     og = Image.new("RGB", (1200, 630), (17, 17, 20))
@@ -88,14 +89,21 @@ def header(lang, pid):
     p = C.PATHS[lang][pid]
     other = "en" if lang == "de" else "de"
     home = rel(p, C.PATHS[lang]["home"])
-    cur = ' aria-current="page"'
-    return f'''<header data-header class="fixed inset-x-0 top-0 z-50 transition-colors duration-300 motion-reduce:transition-none border-b border-transparent bg-transparent"><div class="flex items-center gap-4 px-4 py-3 sm:gap-6 sm:px-5 sm:py-4"><a aria-label="{esc(t["to_home"])}" class="inline-flex min-h-[44px] items-center justify-center rounded-md px-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring" href="{home}"{cur if pid == "home" else ""}><img src="{rel(p, "assets/logo.png")}" alt="{esc(t["logo_alt"])}" width="80" height="80" class="w-auto object-contain transition-all duration-300 motion-reduce:transition-none h-16 sm:h-20"/></a><nav class="flex items-center gap-2 sm:gap-3" aria-label="{esc(t["nav_label"])}"><a class="ks-nav-home {NAV_LINK}" href="{home}"{cur if pid == "home" else ""}>{t["nav_home"]}</a><a class="{NAV_LINK}" href="{rel(p, C.PATHS[lang]["contact"])}"{cur if pid == "contact" else ""}>{t["nav_contact"]}</a></nav><a class="ks-lang {NAV_LINK}" href="{rel(p, C.PATHS[other][pid])}" hreflang="{other}" lang="{other}" aria-label="{esc(t["lang_switch_label"])}"><span aria-hidden="true">{t["lang_switch_flag"]}</span>{t["lang_switch"]}</a></div></header><div aria-hidden="true" class="h-[88px] sm:h-[112px]"></div>'''
+    nav = "".join(
+        f'<a class="ks-navlink" href="{rel(p, C.PATHS[lang][k])}"{' aria-current="page"' if k == pid else ""}>{t[label]}</a>'
+        for k, label in (("home", "nav_home"), ("guide", "nav_guide"), ("about", "nav_about"), ("contact", "nav_contact"))
+    )
+    lang_link = f'<a class="ks-lang" href="{rel(p, C.PATHS[other][pid])}" hreflang="{other}" lang="{other}" aria-label="{esc(t["lang_switch_label"])}"><span aria-hidden="true">{t["lang_switch_flag"]}</span>{t["lang_switch"]}</a>'
+    burger = f'<button type="button" class="ks-burger" data-menu aria-expanded="false" aria-controls="ks-nav" aria-label="{esc(t["menu"])}"><span></span><span></span><span></span></button>'
+    return f'''<header data-header class="ks-header fixed inset-x-0 top-0 z-50 transition-colors duration-300 motion-reduce:transition-none border-b border-transparent bg-transparent"><div class="ks-head"><a aria-label="{esc(t["to_home"])}" class="ks-logo" href="{home}"><img src="{rel(p, "assets/logo.png")}" alt="{esc(t["logo_alt"])}" width="80" height="80"/></a><nav id="ks-nav" class="ks-nav" aria-label="{esc(t["nav_label"])}">{nav}</nav>{lang_link}{burger}</div></header><div aria-hidden="true" class="h-[88px] sm:h-[112px]"></div>'''
 
 
 def footer(lang, pid):
     t = C.T[lang]
     p = C.PATHS[lang][pid]
     links = [
+        (rel(p, C.PATHS[lang]["guide"]), t["f_guide"], ""),
+        (rel(p, C.PATHS[lang]["about"]), t["f_about"], ""),
         (rel(p, C.PATHS[lang]["imprint"]), t["f_imprint"], ""),
         (rel(p, C.PATHS[lang]["privacy"]), t["f_privacy"], ""),
         (rel(p, C.PATHS[lang]["withdrawal"]), t["f_withdrawal"], ""),
@@ -120,7 +128,7 @@ def head(lang, pid, extra_ld=None):
     ld = ""
     for obj in (extra_ld or []):
         ld += '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + "</script>"
-    return f'''<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{esc(meta["title"])}</title><meta name="description" content="{esc(meta["description"])}"/><meta name="author" content="{esc(C.LEGAL_NAME)}"/><meta name="robots" content="{robots}"/><link rel="canonical" href="{canon}"/>{alt}<meta property="og:type" content="website"/><meta property="og:site_name" content="Kadirsells"/><meta property="og:locale" content="{t["og_locale"]}"/><meta property="og:url" content="{canon}"/><meta property="og:title" content="{esc(meta["title"])}"/><meta property="og:description" content="{esc(meta["description"])}"/><meta property="og:image" content="{og_img}"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="{esc(t["og_image_alt"])}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{esc(meta["title"])}"/><meta name="twitter:description" content="{esc(meta["description"])}"/><meta name="twitter:image" content="{og_img}"/><meta name="theme-color" content="#111114"/><link rel="icon" type="image/png" href="{rel(p, "favicon.png")}"/><link rel="stylesheet" href="{rel(p, "assets/styles.css")}"/><link rel="stylesheet" href="{rel(p, "assets/extra.css")}"/>{ld}<script defer src="{rel(p, "assets/site.js")}"></script></head><body><a class="ks-skip" href="#inhalt">{t["skip"]}</a>'''
+    return f'''<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{esc(meta["title"])}</title><meta name="description" content="{esc(meta["description"])}"/><meta name="author" content="{esc(C.LEGAL_NAME)}"/><meta name="robots" content="{robots}"/><link rel="canonical" href="{canon}"/>{alt}<meta property="og:type" content="website"/><meta property="og:site_name" content="Kadirsells"/><meta property="og:locale" content="{t["og_locale"]}"/><meta property="og:url" content="{canon}"/><meta property="og:title" content="{esc(meta["title"])}"/><meta property="og:description" content="{esc(meta["description"])}"/><meta property="og:image" content="{og_img}"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="{esc(t["og_image_alt"])}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="{esc(meta["title"])}"/><meta name="twitter:description" content="{esc(meta["description"])}"/><meta name="twitter:image" content="{og_img}"/><meta name="theme-color" content="#111114"/><link rel="icon" type="image/png" href="{rel(p, "favicon.png")}"/><link rel="stylesheet" href="{rel(p, "assets/styles.css")}"/><link rel="stylesheet" href="{rel(p, "assets/extra.css")}"/>{ld}<script>document.documentElement.classList.add("js")</script><script defer src="{rel(p, "assets/site.js")}"></script></head><body><a class="ks-skip" href="#inhalt">{t["skip"]}</a>'''
 
 
 def page(lang, pid, main_html, ld=None):
@@ -157,77 +165,168 @@ def home(lang):
         "lieferant": {**H["hero"]["lieferant"], "href": buysup},
     }
     g = H["hero"]["guide"]
-    hero = f'''<section class="px-5 pb-14 pt-10 sm:pt-16" data-hero='{esc(json.dumps(hero_data, ensure_ascii=False))}'><div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2"><div class="hero-rise-1"><div data-hero-text class="ks-fade"><p data-f="eyebrow" class="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">{g["eyebrow"]}</p><h1 class="mt-4 flex min-h-[2lh] flex-col justify-start font-display text-[clamp(1.9rem,8.8vw,4.5rem)] uppercase leading-[0.85] tracking-tight text-foreground"><span data-f="h1a" class="whitespace-nowrap">{g["h1a"]}</span><span data-f="h1b" class="whitespace-nowrap">{g["h1b"]}</span></h1><p data-f="tagline" class="mt-5 font-display text-[clamp(0.9rem,3.7vw,1.35rem)] uppercase leading-tight tracking-tight text-muted-foreground">{g["tagline"]}</p></div><div class="mt-8 lg:hidden">{stack(lang, p)}</div><div data-hero-buy class="mt-8 ks-fade"><p class="font-display text-[clamp(2rem,9vw,3rem)] leading-none tracking-tight text-foreground"><span data-f="price">{g["price"]}</span> <span class="ks-vat">{t["incl_vat"]}</span></p><a id="hero-cta" data-f="cta" href="{buy}" class="mt-4 flex h-14 w-full items-center justify-center rounded-xl bg-accent px-7 font-display text-base uppercase tracking-wide text-accent-foreground transition-colors hover:bg-accent/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring lg:w-auto lg:px-10">{g["cta"]}</a><p class="mt-3 text-sm text-muted-foreground">{t["digital_note"]}</p></div></div><div class="hidden lg:block"><div class="mx-auto w-full max-w-[560px]">{stack(lang, p)}</div></div></div></section>'''
+    hero = f'''<section class="ks-hero px-5 pb-14 pt-10 sm:pt-16" data-hero='{esc(json.dumps(hero_data, ensure_ascii=False))}'><div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2"><div class="hero-rise-1"><div data-hero-text class="ks-fade"><p data-f="eyebrow" class="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">{g["eyebrow"]}</p><h1 class="mt-4 flex min-h-[2lh] flex-col justify-start font-display text-[clamp(1.9rem,8.8vw,4.5rem)] uppercase leading-[0.85] tracking-tight text-foreground"><span data-f="h1a" class="whitespace-nowrap">{g["h1a"]}</span><span data-f="h1b" class="whitespace-nowrap">{g["h1b"]}</span></h1><p data-f="tagline" class="mt-5 font-display text-[clamp(0.9rem,3.7vw,1.35rem)] uppercase leading-tight tracking-tight text-muted-foreground">{g["tagline"]}</p></div><div class="mt-8 lg:hidden">{stack(lang, p)}</div><div data-hero-buy class="mt-8 ks-fade"><p class="font-display text-[clamp(2rem,9vw,3rem)] leading-none tracking-tight text-foreground"><span data-f="price">{g["price"]}</span> <span class="ks-vat">{t["incl_vat"]}</span></p><a id="hero-cta" data-f="cta" href="{buy}" class="mt-4 flex h-14 w-full items-center justify-center rounded-xl bg-accent px-7 font-display text-base uppercase tracking-wide text-accent-foreground transition-colors hover:bg-accent/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring lg:w-auto lg:px-10">{g["cta"]}</a><p class="mt-3 text-sm text-muted-foreground">{t["digital_note"]}</p></div></div><div class="hidden lg:block"><div class="mx-auto w-full max-w-[560px]">{stack(lang, p)}</div></div></div></section>'''
 
-    def text_section(title, paras, extra=""):
-        ps = "".join(f"<p>{x}</p>" for x in paras)
-        return f'<section class="border-t border-border px-5 py-16"><div class="mx-auto max-w-3xl"><h2 class="font-display text-[clamp(2rem,10vw,3.5rem)] uppercase leading-[0.9] tracking-tight text-foreground">{title}</h2><div class="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">{ps}</div>{extra}</div></section>'
-
-    problem = text_section(H["problem_title"], H["problem"])
-    note = f'<p class="ks-note mt-6">{H["google_note"]}</p>'
-    loesung = text_section(H["solution_title"], H["solution"], note)
-
-    icons = C.ICONS
-    tiles = "".join(
-        f'<div class="rounded-xl border border-border bg-card p-4 text-center">{icons[i].format(cls="mx-auto h-7 w-7 " + ("text-gold" if i == "star" else "text-accent"))}<p class="mt-3 font-display text-xs uppercase leading-tight tracking-wide text-foreground">{txt}</p></div>'
-        for i, txt in H["tiles"]
-    )
-    tiles = f'<section class="border-t border-border px-5 py-12"><div class="mx-auto grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">{tiles}</div></section>'
-
-    chapters = "".join(
-        f'<li class="rounded-xl border border-border bg-card p-4"><span class="font-display text-sm tracking-wide text-accent">{i + 1:02d}</span><p class="mt-1 text-base leading-snug text-foreground">{c}</p></li>'
-        for i, c in enumerate(H["chapters"])
-    )
-    inhalt = f'''<section class="border-t border-border px-5 py-16"><div class="mx-auto max-w-3xl"><h2 class="font-display text-[clamp(2rem,10vw,3.5rem)] uppercase leading-[0.9] tracking-tight text-foreground">{H["content_title"]}</h2><p class="mt-4 text-muted-foreground">{H["content_sub"]}</p><ol class="mt-8 grid gap-3 sm:grid-cols-2">{chapters}</ol><div class="mt-6 rounded-xl border-2 border-gold/60 bg-card p-5"><p class="font-display text-xs uppercase tracking-[0.22em] text-gold">Bonus</p><p class="mt-2 text-lg leading-snug text-foreground">{H["bonus"]}</p></div></div></section>'''
-
-    about_p = "".join(f"<p>{x}</p>" for x in H["about"])
-    about = f'''<section class="border-t border-border px-5 py-16"><div class="mx-auto grid max-w-3xl gap-8 md:grid-cols-[200px_1fr] md:items-center"><div class="mx-auto w-full max-w-[200px] rounded-2xl border border-accent bg-card p-2 shadow-lg"><img src="{rel(p, "assets/kadir.webp")}" alt="{esc(H["about_img_alt"])}" loading="lazy" width="480" height="480" class="aspect-square w-full rounded-xl object-cover"/></div><div class="min-w-0"><h2 class="font-display text-[clamp(2rem,10vw,3.5rem)] uppercase leading-[0.9] tracking-tight text-foreground">{H["about_title"]}</h2><p class="mt-4 text-lg text-foreground">Kadir</p><p class="text-muted-foreground">@kadirsells</p><div class="mt-4 space-y-4 text-lg leading-relaxed text-muted-foreground">{about_p}</div><a href="{C.INSTAGRAM}" target="_blank" rel="noreferrer" class="mt-6 inline-flex items-center justify-center rounded-xl border border-accent px-6 py-3 font-display text-sm uppercase tracking-wide text-foreground transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">{H["about_cta"]}</a></div></div></section>'''
-
-    faq_items = "".join(
-        f'<details class="ks-faq"><summary>{q}</summary><p>{a}</p></details>' for q, a in H["faq"]
-    )
-    faq = f'<section class="border-t border-border px-5 py-16"><div class="mx-auto max-w-3xl"><h2 class="font-display text-[clamp(2rem,10vw,3.5rem)] uppercase leading-[0.9] tracking-tight text-foreground">{H["faq_title"]}</h2><div class="mt-8 space-y-3">{faq_items}</div></div></section>'
+    M = C.MORE[lang]
+    guide = rel(p, C.PATHS[lang]["guide"])
+    about = rel(p, C.PATHS[lang]["about"])
 
     sticky = f'''<div data-sticky class="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 px-4 py-3 backdrop-blur transition-transform duration-200 motion-reduce:transition-none sm:hidden translate-y-full" aria-hidden="true"><div class="flex items-center gap-3"><span class="shrink-0 font-display text-lg tracking-tight text-foreground">{g["price"]}</span><a href="{buy}" tabindex="-1" class="inline-flex w-full items-center justify-center rounded-xl bg-accent font-display uppercase tracking-wide text-accent-foreground transition-colors hover:bg-accent/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring flex-1 px-4 py-3 text-base">{g["cta"]}</a></div></div>'''
 
-    url = f"{SITE_URL}/{p}"
-    ld = [
-        {
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": C.META[lang]["home"]["product_name"],
-            "description": C.META[lang]["home"]["description"],
-            "image": f"{SITE_URL}/assets/og-image.jpg",
-            "brand": {"@type": "Brand", "name": "Kadirsells"},
-            "inLanguage": "de",
-            "offers": {
-                "@type": "Offer",
-                "url": f"{SITE_URL}/{C.PATHS[lang]['buy']}",
-                "price": "29.99",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock",
-                "seller": {"@type": "Organization", "name": "Digistore24 GmbH"},
-            },
+    main = (
+        hero
+        + marquee(M["marquee"])
+        + problem_solution(lang, H, M)
+        + steps(M)
+        + stats(M)
+        + kadir_teaser(p, H, M, about)
+        + guide_teaser(H, M, guide)
+        + final_cta(lang, M, g["price"], buy, g["cta"])
+        + sticky
+    )
+    write(lang, "home", page(lang, "home", main, [product_ld(lang), person_ld(lang)]))
+
+
+# ---------------------------------------------------------------- Bausteine
+
+def h2(text, cls=""):
+    return f'<h2 class="ks-h2 font-display uppercase text-foreground {cls}">{text}</h2>'
+
+
+def eyebrow(text):
+    return f'<p class="ks-eyebrow">{text}</p>'
+
+
+def marquee(items):
+    row = "".join(f'<span>{x}</span><i aria-hidden="true">✦</i>' for x in items)
+    return f'<div class="ks-marquee" aria-hidden="true"><div class="ks-marquee-track">{row}{row}</div></div>'
+
+
+def nfc_demo(M):
+    stars = "".join(f'<b style="--i:{i}">★</b>' for i in range(5))
+    return f'''<div class="ks-demo ks-reveal" role="img" aria-label="{esc(M["demo_tap"])}: {esc(M["demo_open"])}"><div class="ks-demo-card"><span class="ks-demo-chip"></span><span class="ks-demo-label">NFC</span><span class="ks-demo-waves"><i></i><i></i><i></i></span></div><div class="ks-demo-phone"><div class="ks-demo-screen"><span class="ks-demo-g">G</span><span class="ks-demo-stars">{stars}</span><span class="ks-demo-line"></span><span class="ks-demo-line short"></span></div></div><ol class="ks-demo-caption"><li>{M["demo_tap"]}</li><li>{M["demo_open"]}</li><li>{M["demo_done"]}</li></ol></div>'''
+
+
+def problem_solution(lang, H, M):
+    prob = "".join(f"<p>{x}</p>" for x in H["problem"])
+    sol = "".join(f"<p>{x}</p>" for x in H["solution"])
+    return f'''<section class="ks-section"><div class="ks-wrap ks-ps"><div class="ks-ps-text"><div class="ks-reveal">{h2(H["problem_title"])}<div class="ks-lead">{prob}</div></div><div class="ks-reveal mt-12">{h2(H["solution_title"], "ks-grad-text")}<div class="ks-lead">{sol}</div><p class="ks-note mt-6">{H["google_note"]}</p></div></div>{nfc_demo(M)}</div></section>'''
+
+
+def steps(M):
+    items = "".join(
+        f'<li class="ks-step ks-reveal" style="--d:{i * 120}ms"><span class="ks-step-n">{i + 1:02d}</span><h3 class="font-display uppercase">{t}</h3><p>{d}</p></li>'
+        for i, (t, d) in enumerate(M["steps"])
+    )
+    return f'<section class="ks-section ks-section-alt"><div class="ks-wrap"><div class="ks-reveal">{eyebrow(M["steps_eyebrow"])}{h2(M["steps_title"])}</div><ol class="ks-steps">{items}</ol></div></section>'
+
+
+def stats(M):
+    items = "".join(
+        f'<div class="ks-stat ks-reveal" style="--d:{i * 100}ms"><p class="font-display"><span>{pre}</span><span data-count="{n}">{n}</span><span>{suf}</span></p><span class="ks-stat-l">{l}</span></div>'
+        for i, (pre, n, suf, l) in enumerate(M["stats"])
+    )
+    return f'<section class="ks-stats-wrap"><div class="ks-wrap ks-stats">{items}</div></section>'
+
+
+def kadir_teaser(p, H, M, about_href):
+    return f'''<section class="ks-section"><div class="ks-wrap ks-kadir"><div class="ks-photo ks-reveal"><div class="ks-photo-ring"><img src="{rel(p, "assets/kadir-portrait.webp")}" alt="{esc(H["about_img_alt"])}" loading="lazy" width="900" height="1200"/></div><span class="ks-photo-tag">@kadirsells</span></div><div class="ks-reveal" style="--d:120ms">{eyebrow(M["kadir_eyebrow"])}{h2(M["kadir_title"])}<blockquote class="ks-quote">{M["kadir_quote"]}</blockquote><p class="ks-lead">{M["kadir_text"]}</p><div class="ks-btnrow"><a class="ks-btn ks-btn-ghost" href="{about_href}">{M["kadir_cta"]} <span aria-hidden="true">→</span></a><a class="ks-btn ks-btn-ghost" href="{C.INSTAGRAM}" target="_blank" rel="noreferrer">Instagram</a></div></div></div></section>'''
+
+
+def chapter_list(chapters, start=0):
+    return "".join(
+        f'<li class="ks-chap ks-reveal" style="--d:{(i % 3) * 80}ms"><span class="font-display">{start + i + 1:02d}</span><p>{c}</p></li>'
+        for i, c in enumerate(chapters)
+    )
+
+
+def guide_teaser(H, M, guide_href):
+    return f'''<section class="ks-section ks-section-alt"><div class="ks-wrap"><div class="ks-reveal">{eyebrow(H["content_sub"].split(":")[0])}{h2(M["teaser_title"])}</div><ol class="ks-chaps">{chapter_list(H["chapters"][:4])}<li class="ks-chap ks-chap-more ks-reveal"><a href="{guide_href}">{M["teaser_more"]}<span>{M["teaser_cta"]} →</span></a></li></ol></div></section>'''
+
+
+def final_cta(lang, M, price, buy_href, cta):
+    t = C.T[lang]
+    return f'''<section class="ks-section"><div class="ks-wrap"><div class="ks-final ks-reveal"><h2 class="ks-h2 font-display uppercase">{M["final_title"]}</h2><p class="ks-lead">{M["final_sub"]}</p><p class="ks-final-price font-display">{price} <span class="ks-vat">{t["incl_vat"]}</span></p><a class="ks-btn ks-btn-primary" href="{buy_href}">{cta}</a><p class="ks-trustline">{M["trust_line"]}</p></div></div></section>'''
+
+
+def product_ld(lang):
+    return {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": C.META[lang]["home"]["product_name"],
+        "description": C.META[lang]["home"]["description"],
+        "image": f"{SITE_URL}/assets/og-image.jpg",
+        "brand": {"@type": "Brand", "name": "Kadirsells"},
+        "inLanguage": "de",
+        "offers": {
+            "@type": "Offer",
+            "url": f"{SITE_URL}/{C.PATHS[lang]['buy']}",
+            "price": "29.99",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "seller": {"@type": "Organization", "name": "Digistore24 GmbH"},
         },
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": C.LEGAL_NAME,
-            "alternateName": "Kadir",
-            "url": url,
-            "sameAs": [C.INSTAGRAM],
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
-                for q, a in H["faq"]
-            ],
-        },
-    ]
-    main = hero + problem + loesung + tiles + inhalt + faq + about + sticky
-    write(lang, "home", page(lang, "home", main, ld))
+    }
+
+
+def person_ld(lang):
+    return {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": C.LEGAL_NAME,
+        "alternateName": "Kadir",
+        "url": f"{SITE_URL}/{C.PATHS[lang]['about']}",
+        "image": f"{SITE_URL}/assets/kadir.webp",
+        "sameAs": [C.INSTAGRAM],
+    }
+
+
+def page_head(eyebrow_text, title, lead):
+    return f'''<section class="ks-pagehead"><div class="ks-wrap ks-reveal">{eyebrow(eyebrow_text)}<h1 class="ks-h1 font-display uppercase text-foreground">{title}</h1><p class="ks-lead">{lead}</p></div></section>'''
+
+
+# ---------------------------------------------------------------- Guide-Seite
+
+def guide_page(lang):
+    t = C.T[lang]
+    H = C.HOME[lang]
+    M = C.MORE[lang]
+    B = C.BUY[lang]["buy"]
+    p = C.PATHS[lang]["guide"]
+    buy = rel(p, C.PATHS[lang]["buy"])
+    get = "".join(f'<li class="ks-reveal" style="--d:{i * 100}ms"><span aria-hidden="true">✓</span>{x}</li>' for i, x in enumerate(B["items"]))
+    faq_items = "".join(f'<details class="ks-faq ks-reveal"><summary>{q}</summary><p>{a}</p></details>' for q, a in H["faq"])
+    main = (
+        page_head(M["guide_eyebrow"], M["guide_title"], M["guide_lead"])
+        + f'''<section class="ks-section pt-0"><div class="ks-wrap ks-guide-top"><div class="ks-guide-img ks-reveal"><img src="{rel(p, "assets/praxis-guide.webp")}" alt="{esc(B["img_alt"])}" width="1400" height="990"/></div><div class="ks-buybox ks-reveal" style="--d:120ms"><p class="ks-eyebrow">{H["content_sub"].split(":")[0]}</p><p class="ks-final-price font-display">{B["price"]} <span class="ks-vat">{t["incl_vat"]}</span></p><ul class="ks-checks">{get}</ul><a class="ks-btn ks-btn-primary" href="{buy}">{H["hero"]["guide"]["cta"]}</a><p class="ks-trustline">{M["trust_line"]}</p></div></div></section>'''
+        + f'''<section class="ks-section ks-section-alt"><div class="ks-wrap"><div class="ks-reveal">{h2(M["guide_chapters_title"])}</div><ol class="ks-chaps">{chapter_list(H["chapters"])}</ol><div class="ks-bonus ks-reveal"><p class="ks-eyebrow">Bonus</p><p>{H["bonus"]}</p></div><p class="ks-note mt-6 ks-reveal">{H["google_note"]}</p></div></section>'''
+        + f'''<section class="ks-section"><div class="ks-wrap ks-narrow"><div class="ks-reveal">{h2(H["faq_title"])}</div><div class="mt-8 space-y-3">{faq_items}</div></div></section>'''
+        + f'''<section class="ks-section pt-0"><div class="ks-wrap"><div class="ks-supcard ks-reveal"><img src="{rel(p, "assets/lieferant.webp")}" alt="{esc(t["img_supplier_alt"])}" width="1400" height="990" loading="lazy"/><div><h2 class="font-display uppercase">{M["guide_sup_title"]}</h2><p>{M["guide_sup_text"]}</p><a class="ks-btn ks-btn-ghost" href="{rel(p, C.PATHS[lang]["buysup"])}">{M["guide_sup_cta"]} <span aria-hidden="true">→</span></a></div></div></div></section>'''
+    )
+    faq_ld = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in H["faq"]],
+    }
+    write(lang, "guide", page(lang, "guide", main, [product_ld(lang), faq_ld]))
+
+
+# ---------------------------------------------------------------- Über mich
+
+def about_page(lang):
+    H = C.HOME[lang]
+    M = C.MORE[lang]
+    p = C.PATHS[lang]["about"]
+    story = "".join(f"<p>{x}</p>" for x in H["about"])
+    trust = "".join(
+        f'<li class="ks-trust ks-reveal" style="--d:{(i % 3) * 100}ms"><h3 class="font-display uppercase">{a}</h3><p>{b}</p></li>'
+        for i, (a, b) in enumerate(M["about_trust"])
+    )
+    main = (
+        f'''<section class="ks-pagehead"><div class="ks-wrap ks-kadir ks-about"><div class="ks-photo ks-reveal"><div class="ks-photo-ring"><img src="{rel(p, "assets/kadir-portrait.webp")}" alt="{esc(H["about_img_alt"])}" width="900" height="1200"/></div><span class="ks-photo-tag">@kadirsells</span></div><div class="ks-reveal" style="--d:120ms">{eyebrow(M["about_eyebrow"])}<h1 class="ks-h1 font-display uppercase text-foreground">{M["about_title"]}</h1><div class="ks-lead">{story}</div><div class="ks-btnrow"><a class="ks-btn ks-btn-primary" href="{C.INSTAGRAM}" target="_blank" rel="noreferrer">{H["about_cta"]}</a><a class="ks-btn ks-btn-ghost" href="{rel(p, C.PATHS[lang]["guide"])}">{M["about_cta_guide"]} <span aria-hidden="true">→</span></a></div></div></div></section>'''
+        + f'''<section class="ks-section ks-section-alt"><div class="ks-wrap"><div class="ks-reveal">{h2(M["about_trust_title"])}</div><ul class="ks-trusts">{trust}</ul></div></section>'''
+    )
+    write(lang, "about", page(lang, "about", main, [person_ld(lang)]))
 
 
 # ---------------------------------------------------------------- Kaufseiten
@@ -316,6 +415,8 @@ def main():
     build_assets()
     for lang in ("de", "en"):
         home(lang)
+        guide_page(lang)
+        about_page(lang)
         buy_page(lang, "buy")
         buy_page(lang, "buysup")
         contact(lang)
