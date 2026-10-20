@@ -86,7 +86,7 @@ _ADDR = f"{LEGAL_NAME}<br/>Kadirsells<br/>Scheckerstraße 12<br/>97299 Zell am M
 T = {
     "de": {
         "to_home": "Zur Startseite",
-        "logo_alt": "Kadir Sells – Logo",
+        "logo_alt": "Kadirsells Logo",
         "nav_label": "Hauptnavigation",
         "nav_home": "Startseite",
         "nav_contact": "Kontakt",
@@ -105,8 +105,8 @@ T = {
         "skip": "Zum Inhalt springen",
         "hero_switch_supplier": "Zum Lieferanten-Produkt wechseln",
         "hero_switch_guide": "Zum Praxis-Guide wechseln",
-        "img_supplier_alt": "NFC-Bewertungskarten Lieferantenkontakt – Produktbild",
-        "img_guide_alt": "NFC Bewertungskarten System – Der komplette Praxis-Guide",
+        "img_supplier_alt": "Lieferant für NFC-Google-Bewertungskarten: Karten im Versandkarton",
+        "img_guide_alt": "Praxis-Guide NFC Bewertungskarten verkaufen: Google-Bewertungsaufsteller mit NFC-Chip",
         "hero_tablist": "Produkt wählen",
         "tab_guide": "Praxis-Guide",
         "tab_supplier": "Nur der Lieferant",
@@ -128,7 +128,7 @@ T = {
     },
     "en": {
         "to_home": "Go to homepage",
-        "logo_alt": "Kadir Sells – logo",
+        "logo_alt": "Kadirsells logo",
         "nav_label": "Main navigation",
         "nav_home": "Home",
         "nav_contact": "Contact",
@@ -147,8 +147,8 @@ T = {
         "skip": "Skip to content",
         "hero_switch_supplier": "Switch to the supplier product",
         "hero_switch_guide": "Switch to the practical guide",
-        "img_supplier_alt": "NFC review cards supplier contact – product image",
-        "img_guide_alt": "NFC review card system – the complete practical guide",
+        "img_supplier_alt": "Supplier for NFC Google review cards: cards in a shipping box",
+        "img_guide_alt": "Practical guide to selling NFC review cards: Google review stand with NFC chip",
         "hero_tablist": "Choose a product",
         "tab_guide": "Practical guide",
         "tab_supplier": "Supplier only",
@@ -175,67 +175,67 @@ T = {
 META = {
     "de": {
         "home": {
-            "title": "NFC Bewertungskarten verkaufen – Praxis-Guide (PDF)",
+            "title": "NFC Bewertungskarten verkaufen: Praxis-Guide als PDF",
             "description": "Der Praxis-Guide für dein NFC-Bewertungskarten-Business: Einkauf, Programmierung, Preise, Verkaufsgespräch. 80 Seiten, 9 Kapitel, inkl. Lieferantenkontakt.",
-            "product_name": "NFC Bewertungskarten verkaufen – Praxis-Guide (PDF)",
+            "product_name": "NFC Bewertungskarten verkaufen: Praxis-Guide (PDF)",
         },
         "buy": {
-            "title": "Guide kaufen – NFC Bewertungskarten verkaufen",
+            "title": "Guide kaufen | NFC Bewertungskarten verkaufen",
             "description": "Bestellübersicht: Praxis-Guide als PDF, 80 Seiten, für 29,99 € inkl. MwSt. Kauf über Digistore24, sofortiger Download.",
             "noindex": True,
         },
         "buysup": {
-            "title": "Nur der Lieferant – NFC-Bewertungskarten Supplier-Kontakt",
+            "title": "Lieferant für NFC-Bewertungskarten | Supplier-Kontakt",
             "description": "Kontakt zu meinem Lieferanten für NFC-Google-Bewertungskarten inkl. Anfrage-Vorlage, 13,99 € inkl. MwSt. Kauf über Digistore24.",
             "noindex": True,
         },
         "contact": {
-            "title": "Kontakt – Kadir von Kadirsells",
-            "description": "Fragen zum NFC-Bewertungskarten-Guide? Schreib mir per E-Mail oder per Instagram-DM an @kadirsells.",
+            "title": "Kontakt | Kadirsells, NFC Bewertungskarten",
+            "description": "Fragen zum Guide NFC Bewertungskarten verkaufen? Schreib mir per E-Mail oder per Instagram-DM an @kadirsells.",
         },
         "imprint": {
-            "title": "Impressum – Kadirsells",
+            "title": "Impressum | Kadirsells",
             "description": "Impressum von Kadirsells (Elyesa Kadir Yildirim), Anbieter des Praxis-Guides „NFC Bewertungskarten verkaufen“.",
         },
         "privacy": {
-            "title": "Datenschutzerklärung – Kadirsells",
+            "title": "Datenschutzerklärung | Kadirsells",
             "description": "Wie kadirsells.de mit personenbezogenen Daten umgeht: Hosting, Kontakt, Kauf über Digistore24, Ihre Rechte.",
         },
         "withdrawal": {
-            "title": "Widerrufsrecht – Kadirsells",
+            "title": "Widerrufsrecht | Kadirsells",
             "description": "Widerruf beim Kauf des NFC-Bewertungskarten-Guides: Vertragspartner ist Digistore24, es gilt deren Widerrufsbelehrung.",
         },
     },
     "en": {
         "home": {
-            "title": "Selling NFC Review Cards – Practical Guide (PDF)",
+            "title": "Selling NFC Review Cards: Practical Guide (PDF)",
             "description": "The practical guide to starting an NFC review card business: sourcing, programming, pricing, sales talk. 80 pages, 9 chapters, incl. supplier contact.",
-            "product_name": "Selling NFC Review Cards – Practical Guide (PDF, German)",
+            "product_name": "Selling NFC Review Cards: Practical Guide (PDF, German)",
         },
         "buy": {
-            "title": "Buy the guide – Selling NFC Review Cards",
+            "title": "Buy the guide | Selling NFC Review Cards",
             "description": "Order summary: practical guide as a PDF, 80 pages, €29.99 incl. VAT. Purchase via Digistore24, instant download.",
             "noindex": True,
         },
         "buysup": {
-            "title": "Supplier only – NFC review cards supplier contact",
+            "title": "Supplier for NFC Review Cards | Supplier Contact",
             "description": "Contact to my supplier for NFC Google review cards incl. inquiry template, €13.99 incl. VAT. Purchase via Digistore24.",
             "noindex": True,
         },
         "contact": {
-            "title": "Contact – Kadir from Kadirsells",
+            "title": "Contact | Kadirsells, NFC Review Cards",
             "description": "Questions about the NFC review card guide? Email me or send a DM to @kadirsells on Instagram.",
         },
         "imprint": {
-            "title": "Legal notice – Kadirsells",
+            "title": "Legal notice | Kadirsells",
             "description": "Legal notice of Kadirsells (Elyesa Kadir Yildirim), publisher of the practical guide “Selling NFC review cards”.",
         },
         "privacy": {
-            "title": "Privacy policy – Kadirsells",
+            "title": "Privacy policy | Kadirsells",
             "description": "How kadirsells.de handles personal data: hosting, contact, purchase via Digistore24, your rights.",
         },
         "withdrawal": {
-            "title": "Right of withdrawal – Kadirsells",
+            "title": "Right of withdrawal | Kadirsells",
             "description": "Withdrawal when buying the NFC review card guide: Digistore24 is the seller, its cancellation policy applies.",
         },
     },
@@ -267,25 +267,26 @@ HOME = {
         },
         "problem_title": "Das Problem",
         "problem": [
-            "Läden brauchen Google-Bewertungen und bekommen kaum welche.",
+            "Lokale Läden, Friseure, Restaurants und Cafés brauchen Google-Bewertungen und bekommen kaum welche.",
             "Zufriedene Kunden schreiben fast nie eine.",
             "Unzufriedene viel häufiger.",
         ],
-        "solution_title": "Die Lösung",
+        "solution_title": "Die Lösung: NFC-Bewertungskarten",
         "solution": [
-            "Der Kunde legt das Handy auf die Karte, das Bewertungsfenster öffnet sich, fertig in unter 30 Sekunden.",
-            "Keine App nötig – weder für den Laden noch für den Kunden. Das klappt mit allen aktuellen iPhones und Android-Handys mit NFC.",
+            "Eine NFC-Bewertungskarte hat einen kleinen Chip, auf dem der Link zum Google-Bewertungsformular des Ladens gespeichert ist. Der Kunde legt das Handy auf die Karte, das Bewertungsfenster öffnet sich, fertig in unter 30 Sekunden.",
+            "Keine App nötig, weder für den Laden noch für den Kunden. Das klappt mit allen aktuellen iPhones und Android-Handys mit NFC.",
             "Einmalzahlung, kein Abo.",
+            "Im Praxis-Guide lernst du, wie du solche Google-Bewertungskarten einkaufst, programmierst und an lokale Unternehmen verkaufst, zum Beispiel als Nebengewerbe.",
         ],
-        "google_note": "Die Karten sind für echte, freiwillige Bewertungen gedacht. Bewertungen gegen Rabatt oder Geschenk sind bei Google nicht erlaubt – im Guide zeige ich, wie Läden trotzdem mehr Bewertungen bekommen.",
+        "google_note": "Die Karten sind für echte, freiwillige Bewertungen gedacht. Bewertungen gegen Rabatt oder Geschenk sind bei Google nicht erlaubt. Im Guide zeige ich, wie Läden trotzdem mehr Bewertungen bekommen.",
         "tiles": [
             ("nfc", "Antippen.<br/>Keine App nötig."),
             ("star", "Bewerten in<br/>30 Sekunden."),
             ("trend", "Mehr Bewertungen,<br/>mehr Sichtbarkeit."),
             ("tag", "Ab 50 €<br/>Startkapital."),
         ],
-        "content_title": "Inhalt",
-        "content_sub": "80 Seiten, 9 Kapitel.",
+        "content_title": "Inhalt des Praxis-Guides",
+        "content_sub": "80 Seiten, 9 Kapitel: vom Einkauf der NFC-Karten über das Programmieren des Google-Bewertungslinks bis zum Verkaufsgespräch mit Läden.",
         "chapters": [
             "Das Produkt verstehen.",
             "Gewerbe anmelden.",
@@ -298,21 +299,23 @@ HOME = {
             "Startcheckliste und Links.",
         ],
         "bonus": "Nach dem Kauf bekommst du meinen Supplier-Kontakt per Instagram-DM (alternativ per E-Mail).",
-        "faq_title": "Häufige Fragen",
+        "faq_title": "Häufige Fragen zu NFC-Bewertungskarten",
         "faq": [
+            ("Was ist eine NFC-Bewertungskarte?", "Eine Karte oder ein Aufsteller mit NFC-Chip. Auf dem Chip ist der Link zum Google-Bewertungsformular eines Ladens gespeichert. Hält ein Kunde sein Handy daran, öffnet sich direkt das Formular für die Google-Bewertung."),
+            ("Wie programmiere ich eine NFC-Karte mit dem Google-Bewertungslink?", "Du speicherst den Google-Bewertungslink des Ladens mit dem Smartphone auf dem NFC-Chip der Karte. Kapitel 4 zeigt Schritt für Schritt, wie das geht."),
             ("Brauche ich Vorkenntnisse?", "Nein. Der Guide erklärt Schritt für Schritt, wie du Karten einkaufst, programmierst und an Läden verkaufst."),
-            ("Was kostet der Start?", "Neben dem Guide brauchst du rund 50 € für die ersten Karten und eine Gewerbeanmeldung (je nach Gemeinde etwa 20–60 €)."),
+            ("Was kostet der Start?", "Neben dem Guide brauchst du rund 50 € für die ersten Karten und eine Gewerbeanmeldung (je nach Gemeinde etwa 20 bis 60 €)."),
             ("Funktionieren die Karten mit jedem Handy?", "Mit allen aktuellen iPhones und Android-Geräten mit NFC. Für ältere Handys kann ein QR-Code auf die Karte."),
             ("Brauche ich ein Gewerbe?", "Wenn du Karten regelmäßig verkaufst, ja. Kapitel 2 zeigt, wie die Anmeldung abläuft. Keine Steuer- oder Rechtsberatung."),
             ("Wie bekomme ich den Guide?", "Direkt nach dem Kauf über Digistore24 per Download-Link und E-Mail."),
             ("Kann ich den Kauf widerrufen?", "Bei digitalen Inhalten erlischt das Widerrufsrecht, sobald du im Checkout zustimmst und der Download startet. Details stehen in der Widerrufsbelehrung von Digistore24."),
             ("Ist das ein Abo?", "Nein, du zahlst einmalig 29,99 € inkl. MwSt."),
-            ("Verdiene ich damit garantiert Geld?", "Nein. Wie viel du verkaufst, hängt von deinem Einsatz ab. Der Guide zeigt dir, wie ich vorgehe – inklusive meiner Fehler."),
+            ("Verdiene ich damit garantiert Geld?", "Nein. Wie viel du verkaufst, hängt von deinem Einsatz ab. Der Guide zeigt dir, wie ich vorgehe, inklusive meiner Fehler."),
         ],
         "about_title": "Über mich",
         "about_img_alt": "Kadir arbeitet mit dem Laptop vor einer Fensterfront mit Blick über die Stadt",
         "about": [
-            "Ich bin Kadir, mit vollem Namen Elyesa Kadir Yildirim. Ich verkaufe NFC-Bewertungskarten an Läden — zu Fuß, von Tür zu Tür.",
+            "Ich bin Kadir, mit vollem Namen Elyesa Kadir Yildirim. Ich verkaufe NFC-Bewertungskarten an Läden, zu Fuß, von Tür zu Tür.",
             "Angefangen habe ich ohne Startkapital, ohne Lager, ohne Verkaufserfahrung. Ein Karton Karten und die Bereitschaft, an fremden Türen zu gehen. Mehr war da nicht.",
             "Im Guide steht alles, was ich seitdem gelernt habe. Auch die Fehler.",
         ],
@@ -341,25 +344,26 @@ HOME = {
         },
         "problem_title": "The problem",
         "problem": [
-            "Local shops need Google reviews and hardly get any.",
+            "Local shops, hairdressers, restaurants and cafés need Google reviews and hardly get any.",
             "Happy customers almost never write one.",
             "Unhappy ones do much more often.",
         ],
-        "solution_title": "The solution",
+        "solution_title": "The solution: NFC review cards",
         "solution": [
-            "The customer holds their phone to the card, the review window opens, done in under 30 seconds.",
-            "No app needed – neither for the shop nor for the customer. Works with all current iPhones and Android phones with NFC.",
+            "An NFC review card has a small chip that stores the link to the shop’s Google review form. The customer holds their phone to the card, the review window opens, done in under 30 seconds.",
+            "No app needed, neither for the shop nor for the customer. Works with all current iPhones and Android phones with NFC.",
             "One-time payment, no subscription.",
+            "The practical guide shows you how to buy, program and sell these Google review cards to local businesses, for example as a side business.",
         ],
-        "google_note": "The cards are meant for genuine, voluntary reviews. Google does not allow reviews in exchange for discounts or gifts – the guide shows how shops still get more reviews.",
+        "google_note": "The cards are meant for genuine, voluntary reviews. Google does not allow reviews in exchange for discounts or gifts. The guide shows how shops still get more reviews.",
         "tiles": [
             ("nfc", "Tap.<br/>No app needed."),
             ("star", "Review in<br/>30 seconds."),
             ("trend", "More reviews,<br/>more visibility."),
             ("tag", "Start with<br/>about €50."),
         ],
-        "content_title": "Contents",
-        "content_sub": "80 pages, 9 chapters. The guide is written in German.",
+        "content_title": "What’s in the guide",
+        "content_sub": "80 pages, 9 chapters: from buying the NFC cards and programming the Google review link to the sales conversation with shops. The guide is written in German.",
         "chapters": [
             "Understanding the product.",
             "Registering a business.",
@@ -372,21 +376,23 @@ HOME = {
             "Starter checklist and links.",
         ],
         "bonus": "After your purchase you get my supplier contact via Instagram DM (or by email).",
-        "faq_title": "FAQ",
+        "faq_title": "FAQ about NFC review cards",
         "faq": [
+            ("What is an NFC review card?", "A card or stand with an NFC chip. The chip stores the link to a shop’s Google review form. When a customer holds their phone to it, the Google review form opens directly."),
+            ("How do I program an NFC card with the Google review link?", "You write the shop’s Google review link to the card’s NFC chip using your smartphone. Chapter 4 shows you how, step by step."),
             ("Do I need any prior knowledge?", "No. The guide explains step by step how to buy, program and sell the cards to shops."),
-            ("What does it cost to get started?", "Besides the guide you need about €50 for your first cards and a business registration (in Germany roughly €20–60, depending on the municipality)."),
+            ("What does it cost to get started?", "Besides the guide you need about €50 for your first cards and a business registration (in Germany roughly €20 to €60, depending on the municipality)."),
             ("Do the cards work with every phone?", "With all current iPhones and Android phones with NFC. For older phones you can add a QR code to the card."),
             ("Do I need a registered business?", "If you sell cards regularly, yes. Chapter 2 explains the registration in Germany. This is not tax or legal advice."),
             ("How do I receive the guide?", "Right after your purchase via Digistore24, as a download link and by email."),
             ("Can I cancel my purchase?", "For digital content, the right of withdrawal expires once you agree in the checkout and the download starts. Details are in Digistore24’s cancellation policy."),
             ("Is this a subscription?", "No, you pay once: €29.99 incl. VAT."),
-            ("Am I guaranteed to make money?", "No. How much you sell depends on your effort. The guide shows you how I do it – including my mistakes."),
+            ("Am I guaranteed to make money?", "No. How much you sell depends on your effort. The guide shows you how I do it, including my mistakes."),
         ],
         "about_title": "About me",
         "about_img_alt": "Kadir working on a laptop in front of a window overlooking the city",
         "about": [
-            "I’m Kadir, full name Elyesa Kadir Yildirim. I sell NFC review cards to shops — on foot, door to door.",
+            "I’m Kadir, full name Elyesa Kadir Yildirim. I sell NFC review cards to shops, on foot, door to door.",
             "I started with no starting capital, no stock and no sales experience. A box of cards and the willingness to knock on strangers’ doors. That was it.",
             "The guide contains everything I have learned since. Including the mistakes.",
         ],
@@ -400,8 +406,8 @@ BUY = {
     "de": {
         "buy": {
             "img": "praxis-guide.webp",
-            "img_alt": "NFC Bewertungskarten System – Produkt-Mockup",
-            "name": "NFC Bewertungskarten verkaufen — Praxis-Guide",
+            "img_alt": "Praxis-Guide NFC Bewertungskarten verkaufen als PDF",
+            "name": "NFC Bewertungskarten verkaufen: Der Praxis-Guide",
             "sub": "PDF, 80 Seiten, 9 Kapitel. Sofort nach dem Kauf verfügbar.",
             "items": [
                 "Sofortiger Download als PDF",
@@ -413,8 +419,8 @@ BUY = {
         },
         "buysup": {
             "img": "lieferant.webp",
-            "img_alt": "NFC Bewertungskarten Supplier – Produkt-Mockup",
-            "name": "Nur der Lieferant — Supplier-Kontakt",
+            "img_alt": "Lieferantenkontakt für NFC-Google-Bewertungskarten",
+            "name": "Nur der Lieferant: Supplier-Kontakt",
             "sub": "Kein Guide, kein Kurs, direkter Einkauf. Anfragen. Bestellen. Loslegen.",
             "items": [
                 "PDF (2 Seiten) mit dem genauen Ablauf: Kontakt, Anfrage, worauf du bei der Bestellung achtest",
@@ -432,8 +438,8 @@ BUY = {
     "en": {
         "buy": {
             "img": "praxis-guide.webp",
-            "img_alt": "NFC review card system – product mockup",
-            "name": "Selling NFC review cards — practical guide",
+            "img_alt": "Practical guide to selling NFC review cards as a PDF",
+            "name": "Selling NFC review cards: the practical guide",
             "sub": "PDF in German, 80 pages, 9 chapters. Available right after purchase.",
             "items": [
                 "Instant PDF download",
@@ -445,8 +451,8 @@ BUY = {
         },
         "buysup": {
             "img": "lieferant.webp",
-            "img_alt": "NFC review cards supplier – product mockup",
-            "name": "Supplier only — supplier contact",
+            "img_alt": "Supplier contact for NFC Google review cards",
+            "name": "Supplier only: supplier contact",
             "sub": "No guide, no course, just direct purchasing. Ask. Order. Get started.",
             "items": [
                 "PDF (2 pages, German) with the exact process: contact, inquiry, what to watch out for when ordering",
@@ -589,16 +595,16 @@ _PRIVACY_DE = [
             "Rechtsgrundlagen sind je nach Fall:",
         )
         + _ul(
-            "Art. 6 Abs. 1 lit. a DSGVO – Ihre Einwilligung",
-            "Art. 6 Abs. 1 lit. b DSGVO – Vertragserfüllung oder vorvertragliche Maßnahmen",
-            "Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse",
+            "Art. 6 Abs. 1 lit. a DSGVO: Ihre Einwilligung",
+            "Art. 6 Abs. 1 lit. b DSGVO: Vertragserfüllung oder vorvertragliche Maßnahmen",
+            "Art. 6 Abs. 1 lit. f DSGVO: berechtigtes Interesse",
         ),
     ),
     (
         "Hosting",
         _p(
             "Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.",
-            "Beim Aufruf der Website verarbeitet GitHub die unter Ziffer 4 genannten technischen Daten, um die Seiten auszuliefern und die Sicherheit des Dienstes zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO – mein berechtigtes Interesse an einer sicheren, schnellen und zuverlässigen Bereitstellung dieser Website.",
+            "Beim Aufruf der Website verarbeitet GitHub die unter Ziffer 4 genannten technischen Daten, um die Seiten auszuliefern und die Sicherheit des Dienstes zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, also mein berechtigtes Interesse an einer sicheren, schnellen und zuverlässigen Bereitstellung dieser Website.",
             "Datenübermittlung in die USA: GitHub ist unter dem EU-US Data Privacy Framework zertifiziert (Angemessenheitsbeschluss der EU-Kommission nach Art. 45 DSGVO). Näheres in der Datenschutzerklärung von GitHub: "
             + _a("https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement", "GitHub General Privacy Statement"),
         ),
@@ -653,7 +659,7 @@ _PRIVACY_DE = [
         _p(
             "Der Kauf meiner digitalen Produkte (Guide und Lieferantenkontakt) findet nicht auf dieser Website statt. Beim Klick auf den Kaufen-Button werden Sie zu meinem Vertriebspartner weitergeleitet:",
             "Digistore24 GmbH, St.-Godehard-Straße 32, 31139 Hildesheim, Deutschland",
-            "Digistore24 tritt als Wiederverkäufer auf und wird damit Ihr Vertragspartner. Alle im Bestellprozess eingegebenen Daten – insbesondere Name, Anschrift, E-Mail-Adresse und Zahlungsdaten – werden ausschließlich von Digistore24 erhoben und verarbeitet. Ich erhalte lediglich die zur Auslieferung und Abrechnung erforderlichen Angaben.",
+            "Digistore24 tritt als Wiederverkäufer auf und wird damit Ihr Vertragspartner. Alle im Bestellprozess eingegebenen Daten (insbesondere Name, Anschrift, E-Mail-Adresse und Zahlungsdaten) werden ausschließlich von Digistore24 erhoben und verarbeitet. Ich erhalte lediglich die zur Auslieferung und Abrechnung erforderlichen Angaben.",
             "Es gilt insoweit die Datenschutzerklärung von Digistore24: " + _a(DS24["de"]["privacy"], DS24["de"]["privacy"]),
         ),
     ),
@@ -661,7 +667,7 @@ _PRIVACY_DE = [
         "Übermittlung des Lieferantenkontakts nach dem Kauf",
         _p(
             "Beim Produkt „Kontakt zum Lieferanten“ und beim Bonus zum Guide erhalten Sie die Kontaktdaten des Lieferanten nicht automatisch, sondern persönlich von mir. Dazu senden Sie mir nach dem Kauf über Instagram-Direktnachricht oder per E-Mail einen Nachweis Ihres Kaufs (z. B. Screenshot der Bestellbestätigung).",
-            "Dabei verarbeite ich die in diesem Nachweis enthaltenen Daten – in der Regel Ihr Instagram-Profil bzw. Ihre E-Mail-Adresse, Ihre Bestellnummer und ggf. Ihren Namen aus der Bestellbestätigung – ausschließlich zur Prüfung des Kaufs und zur Übermittlung des Lieferantenkontakts. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).",
+            "Dabei verarbeite ich die in diesem Nachweis enthaltenen Daten (in der Regel Ihr Instagram-Profil bzw. Ihre E-Mail-Adresse, Ihre Bestellnummer und ggf. Ihren Namen aus der Bestellbestätigung) ausschließlich zur Prüfung des Kaufs und zur Übermittlung des Lieferantenkontakts. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).",
             "Bei einer Instagram-Nachricht gelten zusätzlich die Datenschutzbestimmungen von Meta Platforms Ireland Limited (siehe Ziffer 7), bei einer E-Mail die Hinweise unter Ziffer 5.",
             "Den Nachweis bewahre ich nur so lange auf, wie es zur Abwicklung und zum Nachweis der Erfüllung erforderlich ist. Zwingende gesetzliche Aufbewahrungsfristen bleiben unberührt.",
         ),
@@ -729,16 +735,16 @@ _PRIVACY_EN = [
             "Depending on the case, the legal bases are:",
         )
         + _ul(
-            "Art. 6 (1) (a) GDPR – your consent",
-            "Art. 6 (1) (b) GDPR – performance of a contract or pre-contractual measures",
-            "Art. 6 (1) (f) GDPR – legitimate interest",
+            "Art. 6 (1) (a) GDPR: your consent",
+            "Art. 6 (1) (b) GDPR: performance of a contract or pre-contractual measures",
+            "Art. 6 (1) (f) GDPR: legitimate interest",
         ),
     ),
     (
         "Hosting",
         _p(
             "This website is provided via GitHub Pages. The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.",
-            "When you visit the website, GitHub processes the technical data listed in section 4 in order to deliver the pages and keep the service secure. The legal basis is Art. 6 (1) (f) GDPR – my legitimate interest in providing this website securely, quickly and reliably.",
+            "When you visit the website, GitHub processes the technical data listed in section 4 in order to deliver the pages and keep the service secure. The legal basis is Art. 6 (1) (f) GDPR, i.e. my legitimate interest in providing this website securely, quickly and reliably.",
             "Transfer of data to the USA: GitHub is certified under the EU-US Data Privacy Framework (adequacy decision of the EU Commission under Art. 45 GDPR). More details in GitHub’s privacy statement: "
             + _a("https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement", "GitHub General Privacy Statement"),
         ),
@@ -793,7 +799,7 @@ _PRIVACY_EN = [
         _p(
             "The purchase of my digital products (guide and supplier contact) does not take place on this website. When you click the buy button, you are forwarded to my sales partner:",
             "Digistore24 GmbH, St.-Godehard-Straße 32, 31139 Hildesheim, Germany",
-            "Digistore24 acts as a reseller and thus becomes your contractual partner. All data entered during the ordering process – in particular name, address, email address and payment data – is collected and processed exclusively by Digistore24. I only receive the information required for delivery and accounting.",
+            "Digistore24 acts as a reseller and thus becomes your contractual partner. All data entered during the ordering process (in particular name, address, email address and payment data) is collected and processed exclusively by Digistore24. I only receive the information required for delivery and accounting.",
             "Digistore24’s privacy policy applies: " + _a(DS24["en"]["privacy"], DS24["en"]["privacy"]),
         ),
     ),
@@ -801,7 +807,7 @@ _PRIVACY_EN = [
         "Handing over the supplier contact after purchase",
         _p(
             "For the product “Supplier contact” and for the guide’s bonus, you do not receive the supplier’s contact details automatically, but personally from me. To do so, send me proof of purchase after buying (e.g. a screenshot of the order confirmation) via Instagram direct message or by email.",
-            "I process the data contained in this proof – usually your Instagram profile or email address, your order number and, if applicable, your name from the order confirmation – solely to verify the purchase and to hand over the supplier contact. The legal basis is Art. 6 (1) (b) GDPR (performance of a contract).",
+            "I process the data contained in this proof (usually your Instagram profile or email address, your order number and, if applicable, your name from the order confirmation) solely to verify the purchase and to hand over the supplier contact. The legal basis is Art. 6 (1) (b) GDPR (performance of a contract).",
             "For an Instagram message, Meta Platforms Ireland Limited’s privacy policy also applies (see section 7); for an email, see section 5.",
             "I keep the proof only as long as necessary for processing and for proving fulfilment. Mandatory statutory retention periods remain unaffected.",
         ),
