@@ -89,7 +89,7 @@ def header(lang, pid):
     other = "en" if lang == "de" else "de"
     home = rel(p, C.PATHS[lang]["home"])
     cur = ' aria-current="page"'
-    return f'''<header data-header class="fixed inset-x-0 top-0 z-50 transition-colors duration-300 motion-reduce:transition-none border-b border-transparent bg-transparent"><div class="flex items-center gap-4 px-4 py-3 sm:gap-6 sm:px-5 sm:py-4"><a aria-label="{esc(t["to_home"])}" class="inline-flex min-h-[44px] items-center justify-center rounded-md px-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring" href="{home}"{cur if pid == "home" else ""}><img src="{rel(p, "assets/logo.png")}" alt="{esc(t["logo_alt"])}" width="80" height="80" class="w-auto object-contain transition-all duration-300 motion-reduce:transition-none h-16 sm:h-20"/></a><nav class="flex items-center gap-2 sm:gap-3" aria-label="{esc(t["nav_label"])}"><a class="{NAV_LINK}" href="{home}"{cur if pid == "home" else ""}>{t["nav_home"]}</a><a class="{NAV_LINK}" href="{rel(p, C.PATHS[lang]["contact"])}"{cur if pid == "contact" else ""}>{t["nav_contact"]}</a></nav><a class="ks-lang {NAV_LINK}" href="{rel(p, C.PATHS[other][pid])}" hreflang="{other}" lang="{other}" aria-label="{esc(t["lang_switch_label"])}"><span aria-hidden="true">{t["lang_switch_flag"]}</span>{t["lang_switch"]}</a></div></header><div aria-hidden="true" class="h-[88px] sm:h-[112px]"></div>'''
+    return f'''<header data-header class="fixed inset-x-0 top-0 z-50 transition-colors duration-300 motion-reduce:transition-none border-b border-transparent bg-transparent"><div class="flex items-center gap-4 px-4 py-3 sm:gap-6 sm:px-5 sm:py-4"><a aria-label="{esc(t["to_home"])}" class="inline-flex min-h-[44px] items-center justify-center rounded-md px-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring" href="{home}"{cur if pid == "home" else ""}><img src="{rel(p, "assets/logo.png")}" alt="{esc(t["logo_alt"])}" width="80" height="80" class="w-auto object-contain transition-all duration-300 motion-reduce:transition-none h-16 sm:h-20"/></a><nav class="flex items-center gap-2 sm:gap-3" aria-label="{esc(t["nav_label"])}"><a class="ks-nav-home {NAV_LINK}" href="{home}"{cur if pid == "home" else ""}>{t["nav_home"]}</a><a class="{NAV_LINK}" href="{rel(p, C.PATHS[lang]["contact"])}"{cur if pid == "contact" else ""}>{t["nav_contact"]}</a></nav><a class="ks-lang {NAV_LINK}" href="{rel(p, C.PATHS[other][pid])}" hreflang="{other}" lang="{other}" aria-label="{esc(t["lang_switch_label"])}"><span aria-hidden="true">{t["lang_switch_flag"]}</span>{t["lang_switch"]}</a></div></header><div aria-hidden="true" class="h-[88px] sm:h-[112px]"></div>'''
 
 
 def footer(lang, pid):
@@ -263,17 +263,23 @@ def contact_card(href, icon, title, sub, extra):
 # ---------------------------------------------------------------- Rechtstexte
 
 def legal(lang, pid):
+    # Aufbau angelehnt an das Impressum von Southframe Productions:
+    # große Überschrift, Reiter zwischen den Rechtstexten, Abschnitte mit Trennlinien
     t = C.T[lang]
     L = C.LEGAL[lang][pid]
     p = C.PATHS[lang][pid]
+    tabs = "".join(
+        f'<a href="{rel(p, C.PATHS[lang][k])}" class="ks-ltab"{' aria-current="page"' if k == pid else ""}>{C.LEGAL[lang][k]["tab"]}</a>'
+        for k in C.LEGAL_ORDER
+    )
     secs = ""
-    for i, (title, blocks) in enumerate(L["sections"], 1):
-        body = "".join(blocks)
+    for title, blocks in L["sections"]:
         hl = " ks-highlight" if title.startswith("!") else ""
-        title = title.lstrip("!")
-        secs += f'<section class="scroll-mt-24{hl}"><h2 class="mb-4 flex items-baseline gap-3 font-display text-2xl leading-tight tracking-tight text-foreground"><span class="text-gold">{i}.</span>{title}</h2><div class="ks-prose space-y-4 border-l-2 border-accent/30 pl-5 text-sm leading-relaxed text-muted-foreground sm:text-base">{body}</div></section>'
-    note = f'<p class="ks-note mt-6">{L["note"]}</p>' if L.get("note") else ""
-    main = f'''<a href="{rel(p, C.PATHS[lang]["home"])}" class="mb-10 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">{ICON_CHEVRON}{t["back_home"]}</a><header class="mb-12 border-b border-border pb-8"><p class="mb-3 text-sm font-semibold uppercase tracking-widest text-gold">{t["legal_eyebrow"]}</p><h1 class="font-display text-4xl uppercase leading-none tracking-tight text-foreground sm:text-5xl">{L["title"]}</h1><p class="mt-4 text-base text-muted-foreground">{L["sub"]}</p>{note}</header><article class="space-y-10">{secs}</article><p class="mt-12 text-sm text-muted-foreground">{L["stand"]}</p>'''
+        secs += f'<section class="ks-lsec{hl}"><h2 class="font-display uppercase text-foreground">{title.lstrip("!")}</h2><div class="ks-prose">{"".join(blocks)}</div></section>'
+    note = f'<p class="ks-note mt-8">{L["note"]}</p>' if L.get("note") else ""
+    i = C.LEGAL_ORDER.index(pid)
+    nxt = C.LEGAL_ORDER[(i + 1) % len(C.LEGAL_ORDER)]
+    main = f'''<div class="ks-legal"><h1 class="font-display uppercase text-foreground">{L["title"]}</h1><nav class="ks-ltabs" aria-label="{esc(t["legal_eyebrow"])}"><div class="ks-ltabs-list">{tabs}</div><span class="ks-stand">{L["stand"]}</span></nav>{note}<article>{secs}</article><a class="ks-next" href="{rel(p, C.PATHS[lang][nxt])}">{t["legal_next"]} {C.LEGAL[lang][nxt]["tab"]} <span aria-hidden="true">→</span></a></div>'''
     write(lang, pid, page(lang, pid, main))
 
 

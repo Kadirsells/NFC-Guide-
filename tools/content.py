@@ -79,7 +79,10 @@ def _ul(*xs):
     return ["<ul>" + "".join(f"<li>{x}</li>" for x in xs) + "</ul>"]
 
 
-_ADDR = f"{LEGAL_NAME}<br/>Kadirsells<br/>Scheckerstraße 12<br/>97299 Zell am Main<br/>"
+def _rows(*pairs):
+    return ['<dl class="ks-rows">' + "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in pairs) + "</dl>"]
+
+
 
 # ======================================================================= Allgemein
 
@@ -125,6 +128,7 @@ T = {
         ),
         "buy_footer": "Zahlung per Kreditkarte, Lastschrift, PayPal oder Vorkasse · Fragen? Instagram-DM an @kadirsells oder E-Mail",
         "legal_eyebrow": "Rechtliches",
+        "legal_next": "Weiter zu:",
     },
     "en": {
         "to_home": "Go to homepage",
@@ -167,6 +171,7 @@ T = {
         ),
         "buy_footer": "Pay by credit card, direct debit, PayPal or bank transfer · Questions? DM @kadirsells on Instagram or send an email",
         "legal_eyebrow": "Legal",
+        "legal_next": "Next:",
     },
 }
 
@@ -494,23 +499,32 @@ CONTACT = {
 # Ein Abschnittstitel mit "!" am Anfang wird hervorgehoben dargestellt.
 
 _IMPRINT_DE = [
-    ("Angaben gemäß § 5 DDG", _p(_ADDR + "Deutschland")),
+    (
+        "Anbieter",
+        _rows(
+            ("Name", LEGAL_NAME),
+            ("Geschäfts&shy;bezeichnung", "Kadirsells"),
+            ("Anschrift", "Scheckerstraße 12<br/>97299 Zell am Main<br/>Deutschland"),
+        ),
+    ),
     (
         "Kontakt",
-        _p(
-            "E-Mail: " + _a(f"mailto:{EMAIL}", EMAIL, False),
-            "Instagram: " + _a(INSTAGRAM, "@kadirsells") + " (Direktnachricht)",
+        _rows(
+            ("E-Mail", _a(f"mailto:{EMAIL}", EMAIL, False)),
+            ("Instagram", _a(INSTAGRAM, "@kadirsells") + " (Direktnachricht)"),
         ),
     ),
     (
-        "Umsatzsteuer",
-        _p(
-            "Kleinunternehmer gemäß § 19 UStG. Eine Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG liegt nicht vor.",
-            "Die Produkte auf dieser Website verkauft die Digistore24 GmbH als Wiederverkäufer. Digistore24 berechnet die gesetzliche Umsatzsteuer. Alle angegebenen Preise sind Endpreise inklusive Mehrwertsteuer.",
+        "Steuer",
+        _rows(
+            ("Umsatzsteuer-ID", "Liegt nicht vor"),
+            ("Umsatzsteuer", "Kleinunternehmer gemäß § 19 UStG"),
+            ("Verkauf", "Die Produkte auf dieser Website verkauft die Digistore24 GmbH als Wiederverkäufer. Digistore24 berechnet die gesetzliche Umsatzsteuer. Alle angegebenen Preise sind Endpreise inklusive Mehrwertsteuer."),
         ),
     ),
+    ("Verantwortlich für den Inhalt", _p(f"Nach § 18 Abs. 2 MStV: {LEGAL_NAME}, Anschrift wie oben.")),
     (
-        "Verbraucherstreitbeilegung",
+        "Verbraucher&shy;streit&shy;beilegung",
         _p("Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."),
     ),
     (
@@ -537,21 +551,30 @@ _IMPRINT_DE = [
 ]
 
 _IMPRINT_EN = [
-    ("Information pursuant to § 5 DDG (German Digital Services Act)", _p(_ADDR + "Germany")),
+    (
+        "Provider",
+        _rows(
+            ("Name", LEGAL_NAME),
+            ("Business name", "Kadirsells"),
+            ("Address", "Scheckerstraße 12<br/>97299 Zell am Main<br/>Germany"),
+        ),
+    ),
     (
         "Contact",
-        _p(
-            "Email: " + _a(f"mailto:{EMAIL}", EMAIL, False),
-            "Instagram: " + _a(INSTAGRAM, "@kadirsells") + " (direct message)",
+        _rows(
+            ("Email", _a(f"mailto:{EMAIL}", EMAIL, False)),
+            ("Instagram", _a(INSTAGRAM, "@kadirsells") + " (direct message)"),
         ),
     ),
     (
-        "VAT",
-        _p(
-            "Small business pursuant to § 19 UStG (German VAT Act). There is no VAT identification number pursuant to § 27a UStG.",
-            "The products on this website are sold by Digistore24 GmbH as a reseller. Digistore24 charges the statutory VAT. All prices shown are final prices including VAT.",
+        "Tax",
+        _rows(
+            ("VAT ID", "None"),
+            ("VAT", "Small business pursuant to § 19 UStG (German VAT Act)"),
+            ("Sales", "The products on this website are sold by Digistore24 GmbH as a reseller. Digistore24 charges the statutory VAT. All prices shown are final prices including VAT."),
         ),
     ),
+    ("Responsible for content", _p(f"Pursuant to § 18 (2) MStV: {LEGAL_NAME}, address as above.")),
     (
         "Consumer dispute resolution",
         _p("I am neither obliged nor willing to take part in dispute resolution proceedings before a consumer arbitration board."),
@@ -584,7 +607,13 @@ _PRIVACY_DE = [
         "Verantwortlicher",
         _p(
             "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
-            _ADDR + "Deutschland<br/>E-Mail: " + _a(f"mailto:{EMAIL}", EMAIL, False),
+        )
+        + _rows(
+            ("Name", f"{LEGAL_NAME} (Kadirsells)"),
+            ("Anschrift", "Scheckerstraße 12<br/>97299 Zell am Main<br/>Deutschland"),
+            ("E-Mail", _a(f"mailto:{EMAIL}", EMAIL, False)),
+        )
+        + _p(
             "Ein Datenschutzbeauftragter ist nicht bestellt, da die gesetzlichen Voraussetzungen hierfür nicht vorliegen.",
         ),
     ),
@@ -604,7 +633,7 @@ _PRIVACY_DE = [
         "Hosting",
         _p(
             "Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.",
-            "Beim Aufruf der Website verarbeitet GitHub die unter Ziffer 4 genannten technischen Daten, um die Seiten auszuliefern und die Sicherheit des Dienstes zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, also mein berechtigtes Interesse an einer sicheren, schnellen und zuverlässigen Bereitstellung dieser Website.",
+            "Beim Aufruf der Website verarbeitet GitHub die unter „Server-Logfiles“ genannten technischen Daten, um die Seiten auszuliefern und die Sicherheit des Dienstes zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, also mein berechtigtes Interesse an einer sicheren, schnellen und zuverlässigen Bereitstellung dieser Website.",
             "Datenübermittlung in die USA: GitHub ist unter dem EU-US Data Privacy Framework zertifiziert (Angemessenheitsbeschluss der EU-Kommission nach Art. 45 DSGVO). Näheres in der Datenschutzerklärung von GitHub: "
             + _a("https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement", "GitHub General Privacy Statement"),
         ),
@@ -634,7 +663,7 @@ _PRIVACY_DE = [
             "Mein E-Mail-Postfach wird betrieben von Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Eine Übermittlung von Daten in die USA kann dabei nicht ausgeschlossen werden.",
             "Ihre Nachrichten verbleiben bei mir, bis Sie mich zur Löschung auffordern oder der Zweck der Speicherung entfällt. Zwingende gesetzliche Aufbewahrungsfristen bleiben unberührt.",
             "<strong>Kontakt über Instagram</strong>",
-            "Wenn Sie mir über Instagram eine Nachricht schreiben, erfolgt die Verarbeitung Ihrer Daten durch Meta Platforms Ireland Limited nach deren Datenschutzbestimmungen. Näheres dazu unter Ziffer 7.",
+            "Wenn Sie mir über Instagram eine Nachricht schreiben, erfolgt die Verarbeitung Ihrer Daten durch Meta Platforms Ireland Limited nach deren Datenschutzbestimmungen. Näheres dazu unter „Instagram“.",
         ),
     ),
     (
@@ -668,7 +697,7 @@ _PRIVACY_DE = [
         _p(
             "Beim Produkt „Kontakt zum Lieferanten“ und beim Bonus zum Guide erhalten Sie die Kontaktdaten des Lieferanten nicht automatisch, sondern persönlich von mir. Dazu senden Sie mir nach dem Kauf über Instagram-Direktnachricht oder per E-Mail einen Nachweis Ihres Kaufs (z. B. Screenshot der Bestellbestätigung).",
             "Dabei verarbeite ich die in diesem Nachweis enthaltenen Daten (in der Regel Ihr Instagram-Profil bzw. Ihre E-Mail-Adresse, Ihre Bestellnummer und ggf. Ihren Namen aus der Bestellbestätigung) ausschließlich zur Prüfung des Kaufs und zur Übermittlung des Lieferantenkontakts. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).",
-            "Bei einer Instagram-Nachricht gelten zusätzlich die Datenschutzbestimmungen von Meta Platforms Ireland Limited (siehe Ziffer 7), bei einer E-Mail die Hinweise unter Ziffer 5.",
+            "Bei einer Instagram-Nachricht gelten zusätzlich die Datenschutzbestimmungen von Meta Platforms Ireland Limited (siehe „Instagram“), bei einer E-Mail die Hinweise unter „Kontaktaufnahme“.",
             "Den Nachweis bewahre ich nur so lange auf, wie es zur Abwicklung und zum Nachweis der Erfüllung erforderlich ist. Zwingende gesetzliche Aufbewahrungsfristen bleiben unberührt.",
         ),
     ),
@@ -687,7 +716,7 @@ _PRIVACY_DE = [
             "Löschung Ihrer Daten zu verlangen (Art. 17 DSGVO)",
             "die Einschränkung der Verarbeitung zu verlangen (Art. 18 DSGVO)",
             "Datenübertragbarkeit zu verlangen (Art. 20 DSGVO)",
-            "der Verarbeitung zu widersprechen (Art. 21 DSGVO, siehe Ziffer 12)",
+            "der Verarbeitung zu widersprechen (Art. 21 DSGVO, siehe „Widerspruchsrecht“)",
             "eine erteilte Einwilligung jederzeit zu widerrufen (Art. 7 Abs. 3 DSGVO)",
         )
         + _p(
@@ -724,7 +753,13 @@ _PRIVACY_EN = [
         "Controller",
         _p(
             "The controller responsible for data processing on this website is:",
-            _ADDR + "Germany<br/>Email: " + _a(f"mailto:{EMAIL}", EMAIL, False),
+        )
+        + _rows(
+            ("Name", f"{LEGAL_NAME} (Kadirsells)"),
+            ("Address", "Scheckerstraße 12<br/>97299 Zell am Main<br/>Germany"),
+            ("Email", _a(f"mailto:{EMAIL}", EMAIL, False)),
+        )
+        + _p(
             "No data protection officer has been appointed, as the legal requirements for this are not met.",
         ),
     ),
@@ -744,7 +779,7 @@ _PRIVACY_EN = [
         "Hosting",
         _p(
             "This website is provided via GitHub Pages. The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.",
-            "When you visit the website, GitHub processes the technical data listed in section 4 in order to deliver the pages and keep the service secure. The legal basis is Art. 6 (1) (f) GDPR, i.e. my legitimate interest in providing this website securely, quickly and reliably.",
+            "When you visit the website, GitHub processes the technical data listed under “Server log files” in order to deliver the pages and keep the service secure. The legal basis is Art. 6 (1) (f) GDPR, i.e. my legitimate interest in providing this website securely, quickly and reliably.",
             "Transfer of data to the USA: GitHub is certified under the EU-US Data Privacy Framework (adequacy decision of the EU Commission under Art. 45 GDPR). More details in GitHub’s privacy statement: "
             + _a("https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement", "GitHub General Privacy Statement"),
         ),
@@ -774,7 +809,7 @@ _PRIVACY_EN = [
             "My mailbox is operated by Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. A transfer of data to the USA cannot be ruled out.",
             "Your messages remain with me until you ask me to delete them or the purpose of storage no longer applies. Mandatory statutory retention periods remain unaffected.",
             "<strong>Contact via Instagram</strong>",
-            "If you send me a message via Instagram, your data is processed by Meta Platforms Ireland Limited in accordance with its privacy policy. See section 7 for details.",
+            "If you send me a message via Instagram, your data is processed by Meta Platforms Ireland Limited in accordance with its privacy policy. See “Instagram” for details.",
         ),
     ),
     (
@@ -808,7 +843,7 @@ _PRIVACY_EN = [
         _p(
             "For the product “Supplier contact” and for the guide’s bonus, you do not receive the supplier’s contact details automatically, but personally from me. To do so, send me proof of purchase after buying (e.g. a screenshot of the order confirmation) via Instagram direct message or by email.",
             "I process the data contained in this proof (usually your Instagram profile or email address, your order number and, if applicable, your name from the order confirmation) solely to verify the purchase and to hand over the supplier contact. The legal basis is Art. 6 (1) (b) GDPR (performance of a contract).",
-            "For an Instagram message, Meta Platforms Ireland Limited’s privacy policy also applies (see section 7); for an email, see section 5.",
+            "For an Instagram message, Meta Platforms Ireland Limited’s privacy policy also applies (see “Instagram”); for an email, see “Contacting me”.",
             "I keep the proof only as long as necessary for processing and for proving fulfilment. Mandatory statutory retention periods remain unaffected.",
         ),
     ),
@@ -827,7 +862,7 @@ _PRIVACY_EN = [
             "request deletion of your data (Art. 17 GDPR)",
             "request restriction of processing (Art. 18 GDPR)",
             "request data portability (Art. 20 GDPR)",
-            "object to processing (Art. 21 GDPR, see section 12)",
+            "object to processing (Art. 21 GDPR, see “Right to object”)",
             "withdraw consent at any time (Art. 7 (3) GDPR)",
         )
         + _p(
@@ -909,17 +944,19 @@ _WITHDRAWAL_EN = [
     ),
 ]
 
+LEGAL_ORDER = ["imprint", "privacy", "withdrawal"]
+
 _EN_NOTE = "This is a courtesy translation. Only the German version is legally binding."
 
 LEGAL = {
     "de": {
-        "imprint": {"title": "Impressum", "sub": "Angaben gemäß § 5 DDG.", "sections": _IMPRINT_DE, "stand": "Stand: Oktober 2026"},
-        "privacy": {"title": "Datenschutz", "sub": "Datenschutzerklärung nach der Datenschutz-Grundverordnung (DSGVO).", "sections": _PRIVACY_DE, "stand": "Stand: Oktober 2026"},
-        "withdrawal": {"title": "Widerrufsrecht", "sub": "Was beim Widerruf Ihrer Bestellung gilt.", "sections": _WITHDRAWAL_DE, "stand": "Stand: Oktober 2026"},
+        "imprint": {"tab": "Impressum", "title": "Impressum", "sub": "Angaben gemäß § 5 DDG.", "sections": _IMPRINT_DE, "stand": "Stand: Oktober 2026"},
+        "privacy": {"tab": "Datenschutz", "title": "Daten&shy;schutz", "sub": "Datenschutzerklärung nach der Datenschutz-Grundverordnung (DSGVO).", "sections": _PRIVACY_DE, "stand": "Stand: Oktober 2026"},
+        "withdrawal": {"tab": "Widerruf", "title": "Widerrufs&shy;recht", "sub": "Was beim Widerruf Ihrer Bestellung gilt.", "sections": _WITHDRAWAL_DE, "stand": "Stand: Oktober 2026"},
     },
     "en": {
-        "imprint": {"title": "Legal notice", "sub": "Information pursuant to § 5 DDG (Impressum).", "note": _EN_NOTE, "sections": _IMPRINT_EN, "stand": "Last updated: October 2026"},
-        "privacy": {"title": "Privacy", "sub": "Privacy policy under the General Data Protection Regulation (GDPR).", "note": _EN_NOTE, "sections": _PRIVACY_EN, "stand": "Last updated: October 2026"},
-        "withdrawal": {"title": "Right of withdrawal", "sub": "What applies if you want to cancel your order.", "note": _EN_NOTE, "sections": _WITHDRAWAL_EN, "stand": "Last updated: October 2026"},
+        "imprint": {"tab": "Legal notice", "title": "Legal notice", "sub": "Information pursuant to § 5 DDG (Impressum).", "note": _EN_NOTE, "sections": _IMPRINT_EN, "stand": "Last updated: October 2026"},
+        "privacy": {"tab": "Privacy", "title": "Privacy", "sub": "Privacy policy under the General Data Protection Regulation (GDPR).", "note": _EN_NOTE, "sections": _PRIVACY_EN, "stand": "Last updated: October 2026"},
+        "withdrawal": {"tab": "Withdrawal", "title": "Right of withdrawal", "sub": "What applies if you want to cancel your order.", "note": _EN_NOTE, "sections": _WITHDRAWAL_EN, "stand": "Last updated: October 2026"},
     },
 }
