@@ -998,7 +998,6 @@ LEGAL = {
 
 MORE = {
     "de": {
-        "marquee": ["Bestellen", "Programmieren", "Verkaufen", "Keine App nötig", "Einmalzahlung, kein Abo", "80 Seiten Praxis", "Sofort-Download als PDF", "Sichere Zahlung über Digistore24"],
         "demo_tap": "Handy an die Karte",
         "demo_open": "Google-Bewertung öffnet sich",
         "demo_done": "Fertig in unter 30 Sekunden",
@@ -1042,7 +1041,6 @@ MORE = {
         "about_cta_guide": "Zum Guide",
     },
     "en": {
-        "marquee": ["Order", "Program", "Sell", "No app needed", "One-time payment", "80 pages of practice", "Instant PDF download", "Secure payment via Digistore24"],
         "demo_tap": "Phone to the card",
         "demo_open": "Google review opens",
         "demo_done": "Done in under 30 seconds",
