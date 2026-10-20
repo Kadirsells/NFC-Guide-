@@ -151,7 +151,7 @@ def write(lang, pid, doc):
 
 def stack(lang, p, guide_first=True):
     t = C.T[lang]
-    return f'''<div class="hero-rise-2" data-stack><div class="relative w-full" style="perspective:1200px;padding-bottom:62%"><div class="absolute inset-0"><button type="button" data-card="lieferant" aria-label="{esc(t["hero_switch_supplier"])}" class="ks-card absolute left-[2%] top-[12%] block w-[78%] overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring is-back"><span class="block hero-float-back"><img src="{rel(p, "assets/lieferant.webp")}" alt="{esc(t["img_supplier_alt"])}" loading="eager" decoding="async" width="1400" height="990" class="block h-auto w-full"/></span></button><button type="button" data-card="guide" aria-label="{esc(t["hero_switch_guide"])}" class="ks-card absolute left-[2%] top-[12%] block w-[78%] overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring is-front"><span class="block hero-float-front"><img src="{rel(p, "assets/praxis-guide.webp")}" alt="{esc(t["img_guide_alt"])}" loading="eager" decoding="async" width="1400" height="990" class="block h-auto w-full"/></span></button></div><span data-counter class="absolute bottom-0 right-0 z-30 font-mono text-[11px] tracking-widest text-muted-foreground">1 / 2</span></div><div role="tablist" aria-label="{esc(t["hero_tablist"])}" class="mt-5 flex w-full items-center gap-2 rounded-full border border-accent/40 p-1"><button type="button" role="tab" data-tab="guide" aria-selected="true" class="ks-tab h-11 flex-1 rounded-full px-4 font-display text-xs uppercase tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">{t["tab_guide"]}</button><button type="button" role="tab" data-tab="lieferant" aria-selected="false" class="ks-tab h-11 flex-1 rounded-full px-4 font-display text-xs uppercase tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">{t["tab_supplier"]}</button></div></div>'''
+    return f'''<div class="hero-rise-2" data-stack><div class="relative w-full" style="perspective:1200px;padding-bottom:62%"><div class="absolute inset-0"><button type="button" data-card="lieferant" aria-label="{esc(t["hero_switch_supplier"])}" class="ks-card absolute left-[2%] top-[12%] block w-[78%] overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring is-back"><span class="block hero-float-back"><img src="{rel(p, "assets/lieferant.webp")}" alt="{esc(t["img_supplier_alt"])}" loading="eager" decoding="async" width="1400" height="990" class="block h-auto w-full"/></span></button><button type="button" data-card="guide" aria-label="{esc(t["hero_switch_guide"])}" class="ks-card absolute left-[2%] top-[12%] block w-[78%] overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring is-front"><span class="block hero-float-front"><img src="{rel(p, "assets/praxis-guide.webp")}" alt="{esc(t["img_guide_alt"])}" loading="eager" decoding="async" width="1400" height="990" class="block h-auto w-full"/></span></button></div></div><div role="tablist" aria-label="{esc(t["hero_tablist"])}" class="mt-5 flex w-full items-center gap-2"><button type="button" role="tab" data-tab="guide" aria-selected="true" class="ks-tab h-11 flex-1 rounded-full px-4 font-display text-xs uppercase tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">{t["tab_guide"]}</button><button type="button" role="tab" data-tab="lieferant" aria-selected="false" class="ks-tab h-11 flex-1 rounded-full px-4 font-display text-xs uppercase tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">{t["tab_supplier"]}</button></div></div>'''
 
 
 def home(lang):
@@ -175,7 +175,6 @@ def home(lang):
 
     main = (
         hero
-        + marquee(M["marquee"])
         + problem_solution(lang, H, M)
         + steps(M)
         + stats(M)
@@ -195,11 +194,6 @@ def h2(text, cls=""):
 
 def eyebrow(text):
     return f'<p class="ks-eyebrow">{text}</p>'
-
-
-def marquee(items):
-    row = "".join(f'<span>{x}</span><i aria-hidden="true">✦</i>' for x in items)
-    return f'<div class="ks-marquee" aria-hidden="true"><div class="ks-marquee-track">{row}{row}</div></div>'
 
 
 def nfc_demo(M):

@@ -87,13 +87,13 @@ body{background:var(--background);color:var(--foreground)}
 .ks-logo{display:inline-flex;align-items:center;min-height:44px;padding:0 .5rem;border-radius:.5rem}
 .ks-logo img{height:4rem;width:auto}
 @media (min-width:640px){.ks-logo img{height:5rem}}
-.ks-nav{display:flex;align-items:center;gap:.5rem;margin-left:auto}
-.ks-navlink,.ks-lang{display:inline-flex;align-items:center;gap:.375rem;min-height:40px;padding:0 1rem;border-radius:.75rem;border:1px solid var(--border);font-size:.875rem;font-weight:500;color:var(--muted-foreground);transition:color .2s,border-color .2s,background .2s}
-.ks-navlink:hover,.ks-lang:hover{color:var(--foreground);border-color:var(--accent)}
-.ks-navlink[aria-current="page"]{color:var(--foreground);border-color:color-mix(in oklab,var(--accent) 60%,transparent);background:color-mix(in oklab,var(--accent) 10%,transparent)}
-.ks-lang{margin-left:.25rem}
+.ks-nav{display:flex;align-items:center;gap:2rem;margin-left:auto}
+.ks-navlink,.ks-lang{display:inline-flex;align-items:center;gap:.375rem;min-height:40px;padding:0;font-size:.9375rem;font-weight:500;color:var(--muted-foreground);transition:color .2s}
+.ks-navlink:hover,.ks-lang:hover{color:var(--foreground)}
+.ks-navlink[aria-current="page"]{color:var(--foreground)}
+.ks-lang{margin-left:2rem}
 .ks-navlink:focus-visible,.ks-lang:focus-visible,.ks-logo:focus-visible,.ks-burger:focus-visible,.ks-btn:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
-.ks-burger{display:none;width:44px;height:44px;border-radius:.75rem;border:1px solid var(--border);flex-direction:column;align-items:center;justify-content:center;gap:5px;background:transparent}
+.ks-burger{display:none;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:transparent}
 .ks-burger span{display:block;width:18px;height:2px;border-radius:2px;background:var(--foreground);transition:transform .25s,opacity .2s}
 .ks-header.is-open .ks-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .ks-header.is-open .ks-burger span:nth-child(2){opacity:0}
@@ -102,6 +102,7 @@ body{background:var(--background);color:var(--foreground)}
   .ks-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:.5rem;padding:1rem 1.25rem 1.5rem;background:color-mix(in oklab,var(--background) 96%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);margin:0}
   .ks-header.is-open .ks-nav{display:flex;animation:ks-drop .25s ease-out}
   .ks-navlink{min-height:52px;font-size:1.0625rem;justify-content:space-between}
+  .ks-nav{gap:0}
   .ks-lang{margin-left:auto}
   .ks-burger{display:inline-flex}
 }
@@ -135,11 +136,6 @@ body{background:var(--background);color:var(--foreground)}
 @keyframes ks-glow{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-4%,3%,0) scale(1.08)}}
 
 /* Laufband */
-.ks-marquee{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--card) 70%,transparent);padding:1rem 0}
-.ks-marquee-track{display:flex;width:max-content;align-items:center;gap:1.75rem;animation:ks-marquee 36s linear infinite}
-.ks-marquee span{font-family:Archivo Variable,Archivo,Arial Narrow,sans-serif;font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:1.125rem;letter-spacing:.02em;white-space:nowrap}
-.ks-marquee i{font-style:normal;color:var(--accent)}
-@keyframes ks-marquee{to{transform:translateX(-50%)}}
 
 /* Problem und Lösung mit NFC-Animation */
 .ks-ps{display:grid;gap:3.5rem;align-items:center}
@@ -255,7 +251,7 @@ body{background:var(--background);color:var(--foreground)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .ks-reveal{opacity:1;transform:none;transition:none}
-  .ks-hero::before,.ks-marquee-track,.ks-demo-phone,.ks-demo-waves i,.ks-demo-g,.ks-demo-stars b,.ks-photo-ring::before{animation:none}
   .ks-demo-phone{transform:translate(-62%,-32%) rotate(-6deg)}
   .ks-demo-g{opacity:1}.ks-demo-stars b{color:var(--gold)}
 }
+@media (min-width:1024px){.ks-hero h1{font-size:min(4.5rem,4.9vw)}}
