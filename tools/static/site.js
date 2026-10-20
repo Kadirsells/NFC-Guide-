@@ -92,4 +92,45 @@
       if (link) link.tabIndex = visible ? 0 : -1;
     }).observe(cta);
   }
+
+  // Mobiles Menü
+  var menuBtn = document.querySelector("[data-menu]");
+  if (menuBtn && header) {
+    var setMenu = function (open) {
+      header.classList.toggle("is-open", open);
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    menuBtn.addEventListener("click", function () { setMenu(!header.classList.contains("is-open")); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+    header.querySelectorAll(".ks-nav a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  }
+
+  // Elemente beim Scrollen einblenden, Zahlen hochzählen
+  var reveals = document.querySelectorAll(".ks-reveal");
+  var countUp = function (el) {
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    if (reduce || !target) return;
+    var start = null;
+    var step = function (ts) {
+      if (!start) start = ts;
+      var k = Math.min((ts - start) / 1200, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(step);
+    };
+    el.textContent = "0";
+    requestAnimationFrame(step);
+  };
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-in");
+        e.target.querySelectorAll("[data-count]").forEach(countUp);
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-in"); });
+  }
 })();
