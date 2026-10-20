@@ -1,0 +1,255 @@
+                         Startseite   Kontakt
+
+
+
+
+       Zurück zur Startseite
+
+
+
+    R E CHT L ICHE S
+
+
+
+    DATENSCHUTZ
+    Datenschutzerklärung nach der Datenschutz-Grundverordnung (DSGVO).
+
+
+
+
+    1. Verantwortlicher
+       Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+
+       Elyesa Yildirim
+       Kadirsells
+       Scheckerstraße 12
+       97299 Zell am Main
+       Deutschland
+       E-Mail: elyesakadiryildirim@gmail.com
+
+       Ein Datenschutzbeauftragter ist nicht bestellt, da die gesetzlichen
+       Voraussetzungen hierfür nicht vorliegen.
+
+
+
+    2. Allgemeines zur Datenverarbeitung
+       Ich verarbeite personenbezogene Daten nur, soweit dies zur Bereitstellung
+:
+      einer funktionsfähigen Website sowie meiner Inhalte und Leistungen
+      erforderlich ist oder Sie eingewilligt haben.
+
+      Rechtsgrundlagen sind je nach Fall:
+
+
+      Art. 6 Abs. 1 lit. a DSGVO – Ihre Einwilligung
+      Art. 6 Abs. 1 lit. b DSGVO – Vertragserfüllung oder vorvertragliche
+      Maßnahmen
+      Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse
+
+
+
+    3. Hosting
+      Diese Website wird von einem externen Dienstleister gehostet:
+
+      Lovable Labs Incorporated, 1111b South Governors Avenue, Dover, DE 19904,
+      USA
+      Datenschutzbeauftragter: dpo@lovable.dev
+      EU-Kontakt: Lovable Labs AB, Box 190, 101 23 Stockholm, Schweden
+
+      Der Hoster verarbeitet in meinem Auftrag die Daten, die beim Aufruf dieser
+      Website anfallen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO – mein
+      berechtigtes Interesse an einer sicheren, schnellen und zuverlässigen
+      Bereitstellung dieser Website.
+
+      Mit dem Anbieter besteht ein Auftragsverarbeitungsvertrag nach Art. 28
+      DSGVO.
+
+      Datenübermittlung in die USA: Der Anbieter hat seinen Sitz in den USA. Die
+      Übermittlung personenbezogener Daten erfolgt auf Grundlage der
+      Standardvertragsklauseln der EU-Kommission (Durchführungsbeschluss (EU)
+      2021/914, Modul 2) nach Art. 46 Abs. 2 lit. c DSGVO. Der Anbieter setzt
+      Unterauftragsverarbeiter ein; die aktuelle Liste ist unter
+      https://enterprise.lovable.dev/subprocessors abrufbar.
+
+      Eigene Verarbeitung durch den Hoster: Der Anbieter verarbeitet technische
+      Protokolldaten (siehe Ziffer 4) zusätzlich in eigener Verantwortung zu
+:
+      Sicherheits- und Plattformverbesserungszwecken. Näheres dazu in der
+      Datenschutzerklärung des Anbieters: https://lovable.dev/privacy
+
+
+
+    4. Server-Logfiles
+      Beim Aufruf dieser Website erhebt der Hosting-Anbieter automatisch
+      Informationen, die Ihr Browser übermittelt:
+
+      IP-Adresse und ungefährer Standort
+      Browsertyp und Browserversion
+      verwendetes Betriebssystem
+      Referrer-URL
+      aufgerufene Seiten
+      Uhrzeit der Serveranfrage
+
+      Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die
+      Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zum Zweck des
+      technischen Betriebs und der Angriffsabwehr. Die Daten werden gelöscht,
+      sobald sie für den Erhebungszweck nicht mehr erforderlich sind.
+
+
+
+    5. Kontaktaufnahme
+      Auf dieser Website befindet sich kein Kontaktformular. Beim Aufruf der Seite
+      werden keine Kontaktdaten von Ihnen erhoben. Wenn Sie mich erreichen
+      möchten, stehen Ihnen zwei Wege offen:
+
+      Kontakt per E-Mail
+
+      Wenn Sie mir eine E-Mail schreiben, werden Ihre Angaben inklusive der von
+      Ihnen angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für
+      den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht
+      ohne Ihre Einwilligung weiter.
+
+      Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern
+      Ihre Anfrage mit der Anbahnung oder Erfüllung eines Vertrags
+      zusammenhängt. In allen übrigen Fällen beruht die Verarbeitung auf meinem
+:
+      berechtigten Interesse an der effektiven Bearbeitung der an mich gerichteten
+      Anfragen (Art. 6 Abs. 1 lit. f DSGVO).
+
+      Mein E-Mail-Postfach wird betrieben von Google Ireland Limited, Gordon
+      House, Barrow Street, Dublin 4, Irland. Eine Übermittlung von Daten in die
+      USA kann dabei nicht ausgeschlossen werden.
+
+      Ihre Nachrichten verbleiben bei mir, bis Sie mich zur Löschung auffordern
+      oder der Zweck der Speicherung entfällt. Zwingende gesetzliche
+      Aufbewahrungsfristen bleiben unberührt.
+
+      Kontakt über Instagram
+
+      Wenn Sie mir über Instagram eine Nachricht schreiben, erfolgt die
+      Verarbeitung Ihrer Daten durch Meta Platforms Ireland Limited nach deren
+      Datenschutzbestimmungen. Näheres dazu unter Ziffer 7.
+
+
+
+    6. Schriftarten
+      Diese Website verwendet zur einheitlichen Darstellung von Schriftarten lokal
+      eingebundene Schriften (Self-Hosting). Beim Aufruf der Seite wird keine
+      Verbindung zu Servern von Google oder anderen Schriftanbietern aufgebaut;
+      Ihre IP-Adresse wird dabei nicht an Dritte übertragen.
+
+
+
+    7. Verlinkung zu Instagram
+      Auf dieser Website befinden sich Verweise auf mein Instagram-Profil
+      (@kadirsells). Es handelt sich dabei um einfache Links, nicht um eingebettete
+      Social-Media-Plugins. Beim bloßen Aufruf dieser Website werden daher keine
+      Daten an Instagram übertragen.
+
+      Erst wenn Sie den Link aktiv anklicken, werden Sie auf die Seiten von
+      Instagram weitergeleitet. Ab diesem Zeitpunkt gilt die Datenschutzerklärung
+      des Anbieters: Meta Platforms Ireland Limited, Merrion Road, Dublin 4, Irland.
+      Auf die dortige Datenverarbeitung habe ich keinen Einfluss.
+:
+    8. Bestellabwicklung über Digistore24
+      Der Kauf meiner digitalen Produkte (Guide und Lieferantenkontakt) findet
+      nicht auf dieser Website statt. Beim Klick auf den Kaufen-Button werden Sie
+      zu meinem Vertriebspartner weitergeleitet:
+
+      Digistore24 GmbH, St.-Godehard-Straße 32, 31139 Hildesheim, Deutschland
+
+      Digistore24 tritt als Wiederverkäufer auf und wird damit Ihr Vertragspartner.
+      Alle im Bestellprozess eingegebenen Daten – insbesondere Name, Anschrift,
+      E-Mail-Adresse und Zahlungsdaten – werden ausschließlich von Digistore24
+      erhoben und verarbeitet. Ich erhalte lediglich die zur Auslieferung und
+      Abrechnung erforderlichen Angaben.
+
+      Es gilt insoweit die Datenschutzerklärung von Digistore24:
+      https://www.digistore24.com/page/privacy
+
+
+
+    9. Übermittlung des Lieferantenkontakts nach dem Kauf
+      Beim Produkt „Kontakt zum Lieferanten“ erhalten Sie die Kontaktdaten des
+      Lieferanten nicht automatisch, sondern persönlich von mir. Dazu senden Sie
+      mir nach dem Kauf über Instagram-Direktnachricht einen Nachweis Ihres
+      Kaufs (z. B. Screenshot der Bestellbestätigung).
+
+      Dabei verarbeite ich die in diesem Nachweis enthaltenen Daten – in der Regel
+      Ihr Instagram-Profil, Ihre Bestellnummer und ggf. Name und E-Mail-Adresse
+      aus der Bestellbestätigung – ausschließlich zur Prüfung des Kaufs und zur
+      Übermittlung des Lieferantenkontakts. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
+      DSGVO (Vertragserfüllung).
+
+      Die Nachricht wird über Instagram übertragen; es gelten insoweit die
+      Datenschutzbestimmungen von Meta Platforms Ireland Limited (siehe Ziffer
+      7). Sie können den Kaufnachweis alternativ per E-Mail an die oben genannte
+      Adresse senden.
+
+      Den Nachweis bewahre ich nur so lange auf, wie es zur Abwicklung und zum
+      Nachweis der Erfüllung erforderlich ist. Zwingende gesetzliche
+:
+      Aufbewahrungsfristen bleiben unberührt.
+
+
+
+    10. Cookies
+      Diese Website setzt keine Cookies zu Analyse-, Tracking- oder
+      Marketingzwecken ein. Es findet keine Auswertung Ihres Nutzungsverhaltens
+      statt.
+
+      Technisch notwendige Cookies, die für den Betrieb der Seite erforderlich sind,
+      werden auf Grundlage von § 25 Abs. 2 TDDDG ohne Einwilligung gespeichert.
+
+
+
+    11. Ihre Rechte
+      Sie haben jederzeit das Recht:
+
+      Auskunft über Ihre gespeicherten Daten zu verlangen (Art. 15 DSGVO)
+      Berichtigung unrichtiger Daten zu verlangen (Art. 16 DSGVO)
+      Löschung Ihrer Daten zu verlangen (Art. 17 DSGVO)
+      die Einschränkung der Verarbeitung zu verlangen (Art. 18 DSGVO)
+      Datenübertragbarkeit zu verlangen (Art. 20 DSGVO)
+      der Verarbeitung zu widersprechen (Art. 21 DSGVO)
+      eine erteilte Einwilligung jederzeit zu widerrufen (Art. 7 Abs. 3 DSGVO)
+
+      Wenden Sie sich dafür formlos an die oben genannte E-Mail-Adresse.
+
+      Beschwerderecht bei der Aufsichtsbehörde
+
+      Unabhängig davon steht Ihnen ein Beschwerderecht bei einer Datenschutz-
+      Aufsichtsbehörde zu. Die für mich zuständige Behörde ist:
+
+      Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)
+      Promenade 27
+      91522 Ansbach
+      https://www.lda.bayern.de
+:
+    12. SSL-/TLS-Verschlüsselung
+      Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-
+      Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass
+      die Adresszeile des Browsers von „http://“ auf „https://“ wechselt.
+
+
+
+    13. Keine automatisierte Entscheidungsfindung
+      Eine automatisierte Entscheidungsfindung einschließlich Profiling gemäß Art.
+      22 DSGVO findet nicht statt.
+
+
+
+    14. Änderungen dieser Datenschutzerklärung
+      Ich behalte mir vor, diese Datenschutzerklärung anzupassen, damit sie stets
+      den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen
+      meiner Leistungen umzusetzen.
+
+      Stand: September 2026
+
+
+
+
+       Fragen zum Datenschutz? Schreib mir jederzeit an
+       elyesakadiryildirim@gmail.com.
+:
+
