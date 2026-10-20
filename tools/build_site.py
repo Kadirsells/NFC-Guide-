@@ -213,9 +213,16 @@ def problem_solution(lang, H, M):
     return f'''<section class="ks-section"><div class="ks-wrap ks-ps"><div class="ks-ps-text"><div class="ks-reveal">{h2(H["problem_title"])}<div class="ks-lead">{prob}</div></div><div class="ks-reveal mt-12">{h2(H["solution_title"], "ks-grad-text")}<div class="ks-lead">{sol}</div><p class="ks-note mt-6">{H["google_note"]}</p></div></div>{nfc_demo(M)}</div></section>'''
 
 
+STEP_ICONS = [
+    '<path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/>',
+    '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/><path d="M9.5 9.5a3.5 3.5 0 0 1 5 0M8 7.5a6 6 0 0 1 8 0"/>',
+    '<path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/>',
+]
+
+
 def steps(M):
     items = "".join(
-        f'<li class="ks-step ks-reveal" style="--d:{i * 120}ms"><span class="ks-step-n">{i + 1:02d}</span><h3 class="font-display uppercase">{t}</h3><p>{d}</p></li>'
+        f'<li class="ks-step ks-reveal" style="--d:{i * 120}ms"><span class="ks-step-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{STEP_ICONS[i % 3]}</svg></span><h3 class="font-display uppercase">{t}</h3><p>{d}</p></li>'
         for i, (t, d) in enumerate(M["steps"])
     )
     return f'<section class="ks-section ks-section-alt"><div class="ks-wrap"><div class="ks-reveal">{eyebrow(M["steps_eyebrow"])}{h2(M["steps_title"])}</div><ol class="ks-steps">{items}</ol></div></section>'
@@ -233,9 +240,9 @@ def kadir_teaser(p, H, M, about_href):
     return f'''<section class="ks-section"><div class="ks-wrap ks-kadir"><div class="ks-photo ks-reveal"><div class="ks-photo-ring"><img src="{rel(p, "assets/kadir-portrait.webp")}" alt="{esc(H["about_img_alt"])}" loading="lazy" width="900" height="1200"/></div><span class="ks-photo-tag">@kadirsells</span></div><div class="ks-reveal" style="--d:120ms">{eyebrow(M["kadir_eyebrow"])}{h2(M["kadir_title"])}<blockquote class="ks-quote">{M["kadir_quote"]}</blockquote><p class="ks-lead">{M["kadir_text"]}</p><div class="ks-btnrow"><a class="ks-btn ks-btn-ghost" href="{about_href}">{M["kadir_cta"]} <span aria-hidden="true">→</span></a><a class="ks-btn ks-btn-ghost" href="{C.INSTAGRAM}" target="_blank" rel="noreferrer">Instagram</a></div></div></div></section>'''
 
 
-def chapter_list(chapters, start=0):
+def chapter_list(chapters):
     return "".join(
-        f'<li class="ks-chap ks-reveal" style="--d:{(i % 3) * 80}ms"><span class="font-display">{start + i + 1:02d}</span><p>{c}</p></li>'
+        f'<li class="ks-chap ks-reveal" style="--d:{(i % 3) * 80}ms"><span class="ks-chap-dot" aria-hidden="true"></span><p>{c}</p></li>'
         for i, c in enumerate(chapters)
     )
 
