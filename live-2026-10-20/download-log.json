@@ -1,0 +1,366 @@
+[
+ {
+  "url": "https://kadirsells.de/",
+  "status": 200,
+  "type": "text/html; charset=utf-8",
+  "bytes": 23143,
+  "file": "site/index.html"
+ },
+ {
+  "url": "https://kadirsells.de/kaufen",
+  "status": 200,
+  "type": "text/html; charset=utf-8",
+  "bytes": 9651,
+  "file": "site/kaufen/index.html"
+ },
+ {
+  "url": "https://kadirsells.de/kaufen-kontakt",
+  "status": 200,
+  "type": "text/html; charset=utf-8",
+  "bytes": 9496,
+  "file": "site/kaufen-kontakt/index.html"
+ },
+ {
+  "url": "https://kadirsells.de/kontakt",
+  "status": 200,
+  "type": "text/html; charset=utf-8",
+  "bytes": 9117,
+  "file": "site/kontakt/index.html"
+ },
+ {
+  "url": "https://kadirsells.de/impressum",
+  "status": 200,
+  "type": "text/html; charset=utf-8",
+  "bytes": 11868,
+  "file": "site/impressum/index.html"
+ },
+ {
+  "url": "https://kadirsells.de/datenschutz",
+  "status": 200,
+  "type": "text/html; charset=utf-8",
+  "bytes": 22254,
+  "file": "site/datenschutz/index.html"
+ },
+ {
+  "url": "https://kadirsells.de/widerruf",
+  "status": 200,
+  "type": "text/html; charset=utf-8",
+  "bytes": 5508,
+  "file": "site/widerruf/index.html"
+ },
+ {
+  "url": "https://kadirsells.de/robots.txt",
+  "status": 200,
+  "type": "text/plain; charset=utf-8",
+  "bytes": 160,
+  "file": "site/robots.txt"
+ },
+ {
+  "url": "https://kadirsells.de/favicon.png",
+  "status": 200,
+  "type": "image/png",
+  "bytes": 3447,
+  "file": "site/favicon.png"
+ },
+ {
+  "url": "https://kadirsells.de/sitemap.xml",
+  "status": 404,
+  "type": "text/html; charset=utf-8",
+  "bytes": 4332,
+  "file": "site/sitemap.xml"
+ },
+ {
+  "url": "https://kadirsells.de/~flock.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 21296,
+  "file": "site/~flock.js"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/assets-v1/c629fd05-254a-48e2-a379-1e0d0db486c1/logo-ks-new.png",
+  "status": 200,
+  "type": "image/png",
+  "bytes": 185319,
+  "file": "site/__l5e/assets-v1/c629fd05-254a-48e2-a379-1e0d0db486c1/logo-ks-new.png"
+ },
+ {
+  "url": "https://kadirsells.de/assets/nfc-supplier-Bvq_ASa4.webp",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 59940,
+  "file": "site/assets/nfc-supplier-Bvq_ASa4.webp"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/assets-v1/5684965f-1db7-404b-853d-1ab8f7592623/der-komplette-praxis-guide-5.png",
+  "status": 200,
+  "type": "image/webp",
+  "bytes": 71908,
+  "file": "site/__l5e/assets-v1/5684965f-1db7-404b-853d-1ab8f7592623/der-komplette-praxis-guide-5.png"
+ },
+ {
+  "url": "https://kadirsells.de/assets/styles-r0bTjds4.css",
+  "status": 200,
+  "type": "text/css; charset=utf-8",
+  "bytes": 91628,
+  "file": "site/assets/styles-r0bTjds4.css"
+ },
+ {
+  "url": "https://kadirsells.de/assets/index-_7UULhmA.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 350965,
+  "file": "site/assets/index-_7UULhmA.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/routes-BGk0Ykt-.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 15245,
+  "file": "site/assets/routes-BGk0Ykt-.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/createLucideIcon-AQjpJ3T9.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 1189,
+  "file": "site/assets/createLucideIcon-AQjpJ3T9.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/der-komplette-praxis-guide-5.png.asset-DiFhlwmU.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 469,
+  "file": "site/assets/der-komplette-praxis-guide-5.png.asset-DiFhlwmU.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/Footer-BWSVYmAF.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 982,
+  "file": "site/assets/Footer-BWSVYmAF.js"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/events.4d3abd1f6b7321c2.js",
+  "status": 200,
+  "type": "application/javascript; charset=utf-8",
+  "bytes": 25429,
+  "file": "site/__l5e/events.4d3abd1f6b7321c2.js"
+ },
+ {
+  "url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_3wb83pa9jx8vs8w2r5zkt9zpjr/2b3a5b5a30388d4ae2bd70af278d539f_1790626911169.png",
+  "status": 200,
+  "type": "image/png",
+  "bytes": 220759,
+  "file": "extern/pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_3wb83pa9jx8vs8w2r5zkt9zpjr/2b3a5b5a30388d4ae2bd70af278d539f_1790626911169.png"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/assets-v1/2765dc03-f980-4096-bcf1-1e1715f50f91/kadir.jpeg",
+  "status": 200,
+  "type": "image/jpeg",
+  "bytes": 470130,
+  "file": "site/__l5e/assets-v1/2765dc03-f980-4096-bcf1-1e1715f50f91/kadir.jpeg"
+ },
+ {
+  "url": "https://kadirsells.de/assets/kaufen-Utv49D6-.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 3740,
+  "file": "site/assets/kaufen-Utv49D6-.js"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/assets-v1/6eed811b-99ee-42c6-afb3-947c2e994370/nfc-supplier.png",
+  "status": 200,
+  "type": "image/png",
+  "bytes": 2946726,
+  "file": "site/__l5e/assets-v1/6eed811b-99ee-42c6-afb3-947c2e994370/nfc-supplier.png"
+ },
+ {
+  "url": "https://kadirsells.de/assets/kaufen-kontakt-zxtipFuz.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 3905,
+  "file": "site/assets/kaufen-kontakt-zxtipFuz.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/kontakt-BEDEeJ6R.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 2512,
+  "file": "site/assets/kontakt-BEDEeJ6R.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/impressum-r48zuK1k.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 4751,
+  "file": "site/assets/impressum-r48zuK1k.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/chevron-left-CEeNKmgF.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 130,
+  "file": "site/assets/chevron-left-CEeNKmgF.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/datenschutz-UkHQ6tqO.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 11041,
+  "file": "site/assets/datenschutz-UkHQ6tqO.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/widerruf-BolvdSg5.js",
+  "status": 200,
+  "type": "text/javascript; charset=utf-8",
+  "bytes": 569,
+  "file": "site/assets/widerruf-BolvdSg5.js"
+ },
+ {
+  "url": "https://kadirsells.de/assets/archivo-vietnamese-wdth-normal-rJmnGBSt.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 34464,
+  "file": "site/assets/archivo-vietnamese-wdth-normal-rJmnGBSt.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/archivo-latin-ext-wdth-normal-7khWdh9v.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 86240,
+  "file": "site/assets/archivo-latin-ext-wdth-normal-7khWdh9v.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/archivo-latin-wdth-normal-DY7AcnAa.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 90104,
+  "file": "site/assets/archivo-latin-wdth-normal-DY7AcnAa.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 25960,
+  "file": "site/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/inter-cyrillic-wght-normal-DqGufNeO.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 18748,
+  "file": "site/assets/inter-cyrillic-wght-normal-DqGufNeO.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/inter-greek-ext-wght-normal-DlzME5K_.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 11232,
+  "file": "site/assets/inter-greek-ext-wght-normal-DlzME5K_.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/inter-greek-wght-normal-CkhJZR-_.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 18996,
+  "file": "site/assets/inter-greek-wght-normal-CkhJZR-_.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 10252,
+  "file": "site/assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 85068,
+  "file": "site/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 48256,
+  "file": "site/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/jetbrains-mono-cyrillic-wght-normal-D73BlboJ.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 12108,
+  "file": "site/assets/jetbrains-mono-cyrillic-wght-normal-D73BlboJ.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/jetbrains-mono-greek-wght-normal-Bw9x6K1M.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 9004,
+  "file": "site/assets/jetbrains-mono-greek-wght-normal-Bw9x6K1M.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/jetbrains-mono-vietnamese-wght-normal-Bt-aOZkq.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 7504,
+  "file": "site/assets/jetbrains-mono-vietnamese-wght-normal-Bt-aOZkq.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/jetbrains-mono-latin-ext-wght-normal-DBQx-q_a.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 15196,
+  "file": "site/assets/jetbrains-mono-latin-ext-wght-normal-DBQx-q_a.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/jetbrains-mono-latin-wght-normal-B9CIFXIH.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "bytes": 40404,
+  "file": "site/assets/jetbrains-mono-latin-wght-normal-B9CIFXIH.woff2"
+ },
+ {
+  "url": "https://kadirsells.de/assets/`+i+`",
+  "status": 404,
+  "type": "text/html; charset=utf-8",
+  "bytes": 4332,
+  "file": "site/assets/`+i+`"
+ },
+ {
+  "url": "https://kadirsells.de/assets/`+Yt(e)+`",
+  "status": 404,
+  "type": "text/html; charset=utf-8",
+  "bytes": 4332,
+  "file": "site/assets/`+Yt(e)+`"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/trackevents",
+  "status": 404,
+  "type": "text/html; charset=utf-8",
+  "bytes": 4332,
+  "file": "site/__l5e/trackevents"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/replay",
+  "status": 404,
+  "type": "text/html; charset=utf-8",
+  "bytes": 4332,
+  "file": "site/__l5e/replay"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/rrweb-record.js",
+  "status": 404,
+  "type": "text/html; charset=utf-8",
+  "bytes": 4332,
+  "file": "site/__l5e/rrweb-record.js"
+ },
+ {
+  "url": "https://kadirsells.de/__l5e/rrweb-record",
+  "status": 404,
+  "type": "text/html; charset=utf-8",
+  "bytes": 4332,
+  "file": "site/__l5e/rrweb-record"
+ }
+]

@@ -1,5 +1,20 @@
 # NFC Guide – kadirsells.de
 
+## Neue Website (`docs/`)
+
+Statischer Nachbau der Lovable-Seite mit gleichem Design, korrigierten Rechtstexten, Deutsch und Englisch, Sitemap und SEO.
+Vorschau: https://eliyah-kernseite.github.io/NFC-Guide-/ (nach dem Einschalten von GitHub Pages, siehe [ANLEITUNG.md](ANLEITUNG.md)).
+
+| Ordner | Inhalt |
+| --- | --- |
+| `docs/` | Fertige Website, wird von GitHub Pages ausgeliefert |
+| `tools/content.py` | Alle Texte, Deutsch und Englisch |
+| `tools/build_site.py` | Baut `docs/` neu: `python3 tools/build_site.py` |
+| `tools/static/` | Zusatz-CSS und JavaScript |
+| `live-2026-10-20/` | Unveränderte Kopie der Live-Seite vom 20.10.2026 |
+| `bestand-2026-10-20/` | PDF-Export der Live-Seite vom 20.10.2026 |
+
+
 Website zum Verkauf des Praxis-Guides „NFC Bewertungskarten verkaufen“ (gebaut und gehostet mit Lovable, Verkauf über Digistore24).
 
 ## bestand-2026-10-20/
@@ -14,7 +29,7 @@ Unveränderter Stand der Live-Seite vom 20.10.2026, als PDF aus Safari exportier
 | Impressum | pdf/impressum.pdf | text/impressum.txt |
 | Datenschutz | pdf/datenschutz.pdf | text/datenschutz.txt |
 
-Noch keine Änderungen. Die Prüfung (Recht und SEO) liegt als separates Dokument vor.
+Die Prüfung (Recht und SEO) liegt als separates Dokument vor.
 
 ### bilder-aus-pdf/
 

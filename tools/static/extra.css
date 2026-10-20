@@ -1,0 +1,40 @@
+/* Ergänzungen zum Lovable-CSS (styles.css) für die statische Version */
+
+.ks-skip{position:absolute;left:-9999px;top:0;z-index:100;padding:.75rem 1rem;border-radius:.5rem;background:var(--accent);color:var(--accent-foreground)}
+.ks-skip:focus{left:1rem;top:1rem}
+
+.ks-lang{margin-left:auto;gap:.375rem}
+
+/* Hero: Kartenstapel und Produktumschalter */
+.ks-card{transition:transform .5s cubic-bezier(.22,1,.36,1),filter .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1),border-color .5s cubic-bezier(.22,1,.36,1);will-change:transform,filter}
+.ks-card.is-front{z-index:20;transform:translate3d(0,0,0) scale(1);filter:none;border:1px solid var(--accent);box-shadow:0 20px 50px rgba(0,0,0,.5);cursor:default}
+.ks-card.is-back{z-index:10;transform:translate3d(20%,-20%,0) scale(.88);filter:brightness(.6) saturate(.8) blur(3px);border:1px solid transparent;box-shadow:none;cursor:pointer}
+.ks-card.is-back:hover{filter:brightness(.75) saturate(.9) blur(2px)}
+.ks-tab[aria-selected="true"]{background:var(--accent);color:var(--accent-foreground);border:1px solid transparent}
+.ks-tab[aria-selected="false"]{border:1px solid var(--accent);color:var(--foreground)}
+.ks-tab[aria-selected="false"]:hover{background:color-mix(in oklab,var(--accent) 15%,transparent)}
+.ks-fade{transition:opacity .2s ease-in-out}
+.ks-fade.is-fading{opacity:0}
+.ks-vat{font-family:var(--font-sans);font-size:.875rem;font-weight:400;letter-spacing:0;color:var(--muted-foreground)}
+
+/* Hinweisbox */
+.ks-note{border-left:2px solid var(--gold);padding:.75rem 1rem;background:var(--card);border-radius:.5rem;font-size:.95rem;line-height:1.6;color:var(--muted-foreground)}
+
+/* FAQ */
+.ks-faq{border:1px solid var(--border);border-radius:.75rem;background:var(--card)}
+.ks-faq summary{cursor:pointer;list-style:none;padding:1rem 3rem 1rem 1.25rem;position:relative;font-size:1.0625rem;font-weight:600;color:var(--foreground)}
+.ks-faq summary::-webkit-details-marker{display:none}
+.ks-faq summary::after{content:"+";position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);font-size:1.5rem;font-weight:400;color:var(--gold);transition:transform .2s}
+.ks-faq[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.ks-faq summary:focus-visible{outline:2px solid var(--ring);outline-offset:2px;border-radius:.75rem}
+.ks-faq p{padding:0 1.25rem 1.25rem;line-height:1.65;color:var(--muted-foreground)}
+
+/* Fließtext in Rechtstexten */
+.ks-prose a{color:var(--foreground);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--accent);overflow-wrap:anywhere}
+.ks-prose a:hover{text-decoration-color:var(--gold)}
+.ks-prose strong{color:var(--foreground);font-weight:600}
+.ks-prose ul{list-style:disc;padding-left:1.25rem}
+.ks-prose li+li{margin-top:.25rem}
+.ks-highlight{border:1px solid var(--gold);border-radius:.75rem;padding:1.25rem;background:var(--card)}
+
+@media (prefers-reduced-motion:reduce){.ks-card,.ks-fade{transition:none}}
